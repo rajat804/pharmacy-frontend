@@ -10,15 +10,18 @@ import {
   FaBaby,
   FaLeaf,
   FaStar,
-  FaAward
+  FaAward,
+  FaQuoteLeft,
+  FaChartLine,
+  FaRegLightbulb
 } from 'react-icons/fa';
 
 const AboutSection = () => {
   const stats = [
-    { value: "50,000+", label: "Babies Benefited", icon: <FaBaby className="text-3xl" /> },
-    { value: "500+", label: "Hospitals Served", icon: <FaHospitalUser className="text-3xl" /> },
-    { value: "1,00,000+", label: "Lives Supported", icon: <FaHeartbeat className="text-3xl" /> },
-    { value: "ISO 22000", label: "Certified Facility", icon: <FaShieldAlt className="text-3xl" /> }
+    { value: "50,000+", label: "Babies Benefited", icon: <FaBaby className="text-3xl" />, color: "from-blue-600 to-blue-500" },
+    { value: "500+", label: "Hospitals Served", icon: <FaHospitalUser className="text-3xl" />, color: "from-slate-600 to-slate-500" },
+    { value: "1,00,000+", label: "Lives Supported", icon: <FaHeartbeat className="text-3xl" />, color: "from-blue-500 to-blue-400" },
+    { value: "ISO 22000", label: "Certified Facility", icon: <FaShieldAlt className="text-3xl" />, color: "from-slate-500 to-slate-400" }
   ];
 
   const values = [
@@ -26,25 +29,25 @@ const AboutSection = () => {
       title: "Quality & Safety",
       description: "ISO 22000:2018 and GMP-certified human milk facility in India with rigorous safety protocols.",
       icon: <FaShieldAlt className="text-4xl" />,
-      color: "from-[#1e3a5f] to-[#152c48]"
+      color: "from-blue-600 to-blue-500"
     },
     {
       title: "Clinical Excellence",
       description: "Clinically evidenced products trusted by leading neonatologists across India.",
       icon: <FaFlask className="text-4xl" />,
-      color: "from-[#152c48] to-[#0f2440]"
+      color: "from-slate-600 to-slate-500"
     },
     {
       title: "Compassionate Care",
       description: "Dedicated to supporting premature and at-risk sick babies with optimal nutrition.",
       icon: <FaHandHoldingHeart className="text-4xl" />,
-      color: "from-[#1e3a5f] to-[#152c48]"
+      color: "from-blue-500 to-blue-400"
     },
     {
       title: "Innovation",
       description: "Segment-first products including lyophilised human milk and human milk-derived fortifiers.",
-      icon: <FaLeaf className="text-4xl" />,
-      color: "from-[#152c48] to-[#0f2440]"
+      icon: <FaRegLightbulb className="text-4xl" />,
+      color: "from-slate-500 to-slate-400"
     }
   ];
 
@@ -56,7 +59,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-[#f5f7fa]">
+    <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -67,15 +70,16 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-[#1e3a5f] font-semibold text-sm uppercase tracking-wider bg-[#e8eef5] px-4 py-2 rounded-full inline-block mb-4">
-            About Us
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-4">
+          <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <FaHeartbeat className="text-blue-600 text-lg" />
+            <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">About Us</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
             Nurturing Lives Through<br />
-            <span className="text-[#1e3a5f]">100% Human Milk</span>
+            <span className="text-blue-600">100% Human Milk</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#1e3a5f] to-[#7ab3c8] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 max-w-3xl mx-auto text-lg leading-relaxed">
             We develop 100% human milk-derived products using proprietary technologies intended for babies 
             who do not have access to their mother's milk. We are the only ISO 22000:2018 and GMP-certified 
             human milk facility in India.
@@ -91,17 +95,13 @@ const AboutSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all duration-300 border border-[#e0e8f0] group hover:-translate-y-2 hover:border-[#1e3a5f]/20"
+              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 group hover:-translate-y-2"
             >
-              <div className="text-[#1e3a5f] flex justify-center mb-3 group-hover:scale-110 group-hover:text-[#7ab3c8] transition-all duration-300">
-                {stat.icon}
+              <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform shadow-md`}>
+                <div className="text-white text-2xl">{stat.icon}</div>
               </div>
-              <div className="text-3xl font-bold text-[#0a1628] mb-1 group-hover:text-[#1e3a5f] transition-colors">
-                {stat.value}
-              </div>
-              <div className="text-gray-500 text-sm group-hover:text-gray-700 transition-colors">
-                {stat.label}
-              </div>
+              <div className="text-3xl font-bold text-slate-800 mb-1">{stat.value}</div>
+              <div className="text-gray-500 text-sm group-hover:text-gray-600 transition-colors">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -116,22 +116,22 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl border border-gray-100">
               <img 
                 src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                 alt="Baby Care"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#1e3a5f]/30 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent"></div>
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#1e3a5f] to-[#152c48] rounded-full flex items-center justify-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-500 rounded-full flex items-center justify-center shadow-md">
                   <FaAward className="text-white text-xl" />
                 </div>
                 <div>
-                  <p className="font-bold text-[#0a1628] text-sm">Award Winning</p>
+                  <p className="font-bold text-slate-800 text-sm">Award Winning</p>
                   <p className="text-xs text-gray-500">Excellence in Neonatal Care</p>
                 </div>
               </div>
@@ -145,16 +145,16 @@ const AboutSection = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl font-bold text-[#0a1628] mb-4">
+            <h3 className="text-3xl font-bold text-slate-800 mb-4">
               Dedicated to Supporting <br />
-              <span className="text-[#1e3a5f]">Premature Babies</span>
+              <span className="text-blue-600">Premature Babies</span>
             </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
+            <p className="text-gray-500 mb-6 leading-relaxed">
               Our product portfolio includes segment-first products such as lyophilised human milk and 
               human milk-derived fortifiers which are designed to meet specific nutritional challenges 
               faced by premature babies in their early life.
             </p>
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-gray-500 mb-8 leading-relaxed">
               These clinically evidenced products are used across many of the best mother & child care 
               hospitals and are available across all major towns and cities pan-INDIA. Having access to 
               these products assists healthcare professionals in optimizing the right nutritional choices 
@@ -175,10 +175,10 @@ const AboutSection = () => {
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <div className="w-5 h-5 bg-gradient-to-br from-[#1e3a5f] to-[#152c48] rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-all">
+                  <div className="w-5 h-5 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-all">
                     <div className="w-2 h-2 bg-white rounded-full"></div>
                   </div>
-                  <span className="text-gray-700 group-hover:text-[#1e3a5f] transition-colors">
+                  <span className="text-gray-600 group-hover:text-blue-600 transition-colors">
                     {feature}
                   </span>
                 </motion.div>
@@ -196,7 +196,8 @@ const AboutSection = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-bold text-[#0a1628] mb-3">Our Core Values</h3>
+            <h3 className="text-3xl font-bold text-slate-800 mb-3">Our Core Values</h3>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full mb-3"></div>
             <p className="text-gray-500">What drives us every day to make a difference</p>
           </motion.div>
           
@@ -208,12 +209,12 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer border border-[#e0e8f0] hover:-translate-y-2 hover:border-[#1e3a5f]/20"
+                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all duration-500 group cursor-pointer border border-gray-100 hover:-translate-y-2"
               >
-                <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg`}>
+                <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto mb-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-md`}>
                   <div className="text-white">{value.icon}</div>
                 </div>
-                <h4 className="text-xl font-bold text-[#0a1628] mb-2 group-hover:text-[#1e3a5f] transition-colors">
+                <h4 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
                   {value.title}
                 </h4>
                 <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-600 transition-colors">
@@ -225,7 +226,7 @@ const AboutSection = () => {
         </div>
 
         {/* Milestones Timeline */}
-        <div className="bg-gradient-to-br from-[#0a1628] to-[#1e3a5f] rounded-3xl p-10 text-white shadow-2xl">
+        <div className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-3xl p-10 text-white shadow-xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -234,7 +235,7 @@ const AboutSection = () => {
             className="text-center mb-10"
           >
             <h3 className="text-3xl font-bold mb-2">Our Journey</h3>
-            <p className="text-[#7ab3c8]">Milestones that define our commitment</p>
+            <p className="text-blue-300">Milestones that define our commitment</p>
           </motion.div>
           
           <div className="grid md:grid-cols-4 gap-6">
@@ -248,12 +249,12 @@ const AboutSection = () => {
                 className="text-center relative group"
               >
                 {index < milestones.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-[#7ab3c8]/30"></div>
+                  <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-blue-400/30"></div>
                 )}
                 <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold backdrop-blur-sm group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300">
                   {milestone.year.slice(-2)}
                 </div>
-                <h4 className="font-bold text-lg mb-2 group-hover:text-[#7ab3c8] transition-colors">
+                <h4 className="font-bold text-lg mb-2 group-hover:text-blue-300 transition-colors">
                   {milestone.title}
                 </h4>
                 <p className="text-sm text-white/70 group-hover:text-white/90 transition-colors">
@@ -272,7 +273,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <h3 className="text-2xl font-bold text-[#0a1628] mb-3">
+          <h3 className="text-2xl font-bold text-slate-800 mb-3">
             Consult our panel of Lactation Experts
           </h3>
           <p className="text-gray-500 mb-6">
@@ -282,14 +283,14 @@ const AboutSection = () => {
             <motion.button 
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-gradient-to-r from-[#1e3a5f] to-[#152c48] hover:from-[#152c48] hover:to-[#0f2440] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-600 hover:to-slate-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               Contact Our Experts
             </motion.button>
             <motion.button 
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="border-2 border-[#1e3a5f] text-[#1e3a5f] px-8 py-3 rounded-full font-semibold hover:bg-[#1e3a5f] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              className="border-2 border-slate-600 text-slate-600 px-8 py-3 rounded-full font-semibold hover:bg-slate-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
             >
               Learn More
             </motion.button>
@@ -302,13 +303,13 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 bg-gradient-to-r from-[#e8eef5] to-[#f0f4f9] rounded-3xl p-8 text-center shadow-lg hover:shadow-2xl transition-all duration-300"
+          className="mt-16 bg-gradient-to-r from-gray-50 to-white rounded-3xl p-8 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <p className="text-[#1e3a5f] font-semibold text-sm">One number, multiple benefits</p>
-              <h4 className="text-3xl font-bold text-[#0a1628]">1800 - 419 - 2199</h4>
-              <p className="text-gray-600 text-sm mt-2">Free Breastfeeding Helpline</p>
+              <p className="text-blue-600 font-semibold text-sm">One number, multiple benefits</p>
+              <h4 className="text-3xl font-bold text-slate-800">1800 - 419 - 2199</h4>
+              <p className="text-gray-500 text-sm mt-2">Free Breastfeeding Helpline</p>
             </div>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600">
               <span className="flex items-center gap-1">✓ Childbirth education program</span>
