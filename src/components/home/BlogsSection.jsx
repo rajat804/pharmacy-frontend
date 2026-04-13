@@ -9,9 +9,9 @@ import {
   FaNewspaper,
   FaChevronRight,
   FaSearch,
-  FaTags,
   FaShareAlt,
-  FaClock
+  FaClock,
+  FaTag
 } from 'react-icons/fa';
 
 const BlogsSection = () => {
@@ -123,7 +123,7 @@ const BlogsSection = () => {
       excerpt: "Real stories from parents whose premature babies thrived on 100% human milk diet...",
       category: "parenting",
       author: "Parent Community",
-      authorRole: "NeoLacta Parents",
+      authorRole: "Happy Parents",
       date: "February 5, 2024",
       readTime: "12 min read",
       image: "https://images.pexels.com/photos/6873559/pexels-photo-6873559.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop",
@@ -143,7 +143,7 @@ const BlogsSection = () => {
   const featuredBlogs = blogs.filter(blog => blog.featured);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#f8fbf9] to-white">
+    <section className="py-20 bg-gradient-to-b from-[#f5f7fa] to-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -154,13 +154,13 @@ const BlogsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-[#1a6d4c] font-semibold text-sm uppercase tracking-wider bg-[#e8f5f0] px-4 py-2 rounded-full inline-block mb-4">
+          <span className="text-[#1e3a5f] font-semibold text-sm uppercase tracking-wider bg-[#e8eef5] px-4 py-2 rounded-full inline-block mb-4">
             Our Blog
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1a4a3a] mb-4">
-            Insights & <span className="text-[#1a6d4c]">Knowledge Hub</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-4">
+            Insights & <span className="text-[#1e3a5f]">Knowledge Hub</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#1a6d4c] to-[#0f5a3e] mx-auto rounded-full mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#1e3a5f] to-[#7ab3c8] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Expert insights, clinical updates, and parenting tips for your little one's healthy journey
           </p>
@@ -176,27 +176,29 @@ const BlogsSection = () => {
         >
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             {/* Search Box */}
-            <div className="relative w-full md:w-96">
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <div className="relative w-full md:w-96 group">
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-[#1e3a5f] transition-colors duration-300" />
               <input
                 type="text"
                 placeholder="Search articles, topics, or tags..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-full border border-[#e0ebe6] focus:border-[#1a6d4c] focus:outline-none focus:ring-2 focus:ring-[#1a6d4c]/20 transition-all"
+                className="w-full pl-11 pr-4 py-3 rounded-full border border-[#e0e8f0] focus:border-[#1e3a5f] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/20 transition-all duration-300"
               />
             </div>
 
             {/* Categories */}
             <div className="flex flex-wrap gap-2 justify-center">
               {categories.map((category) => (
-                <button
+                <motion.button
                   key={category.id}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
                     activeCategory === category.id
-                      ? 'bg-gradient-to-r from-[#1a6d4c] to-[#0f5a3e] text-white shadow-md'
-                      : 'bg-white text-gray-600 hover:bg-[#e8f5f0] hover:text-[#1a6d4c] border border-[#e0ebe6]'
+                      ? 'bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-[#e8eef5] hover:text-[#1e3a5f] border border-[#e0e8f0]'
                   }`}
                 >
                   {category.icon}
@@ -204,7 +206,7 @@ const BlogsSection = () => {
                   <span className={`text-xs ${activeCategory === category.id ? 'text-white/80' : 'text-gray-400'}`}>
                     ({category.count})
                   </span>
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
@@ -220,8 +222,8 @@ const BlogsSection = () => {
             className="mb-12"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold text-[#1a4a3a]">Featured Articles</h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-[#1a6d4c] to-transparent"></div>
+              <h3 className="text-2xl font-bold text-[#0a1628]">Featured Articles</h3>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-[#1e3a5f] to-transparent"></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {featuredBlogs.map((blog, index) => (
@@ -238,9 +240,9 @@ const BlogsSection = () => {
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/40 to-transparent"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-[#1a6d4c] text-white px-3 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                         Featured
                       </span>
                     </div>
@@ -253,13 +255,16 @@ const BlogsSection = () => {
                           <FaClock className="text-xs" /> {blog.readTime}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2 group-hover:text-[#b8e6d4] transition-colors">
+                      <h3 className="text-2xl font-bold mb-2 group-hover:text-[#7ab3c8] transition-colors">
                         {blog.title}
                       </h3>
                       <p className="text-white/80 text-sm mb-3 line-clamp-2">{blog.excerpt}</p>
-                      <button className="flex items-center gap-2 text-white font-semibold text-sm group-hover:gap-3 transition-all">
+                      <motion.button 
+                        whileHover={{ x: 5 }}
+                        className="flex items-center gap-2 text-white font-semibold text-sm group-hover:gap-3 transition-all"
+                      >
                         Read More <FaChevronRight className="text-xs" />
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
                 </motion.div>
@@ -285,19 +290,22 @@ const BlogsSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-[#e0ebe6] group hover:-translate-y-2"
+                  className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-[#e0e8f0] group hover:-translate-y-3 hover:border-[#1e3a5f]/20"
                 >
                   {/* Blog Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img
                       src={blog.image}
                       alt={blog.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-3 right-3">
-                      <button className="bg-white/90 hover:bg-[#1a6d4c] text-gray-600 hover:text-white p-2 rounded-full transition-all duration-300">
+                      <motion.button 
+                        whileHover={{ scale: 1.1 }}
+                        className="bg-white/90 hover:bg-gradient-to-r hover:from-[#1e3a5f] hover:to-[#152c48] text-gray-600 hover:text-white p-2 rounded-full transition-all duration-300 shadow-md"
+                      >
                         <FaShareAlt className="text-sm" />
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
 
@@ -305,7 +313,7 @@ const BlogsSection = () => {
                   <div className="p-5">
                     {/* Category Tag */}
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs bg-[#e8f5f0] text-[#1a6d4c] px-2 py-1 rounded-full">
+                      <span className="text-xs bg-[#e8eef5] text-[#1e3a5f] px-2 py-1 rounded-full group-hover:bg-[#1e3a5f] group-hover:text-white transition-all duration-300">
                         {categories.find(c => c.id === blog.category)?.name}
                       </span>
                       <span className="text-xs text-gray-400 flex items-center gap-1">
@@ -314,24 +322,29 @@ const BlogsSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-[#1a4a3a] mb-2 line-clamp-2 group-hover:text-[#1a6d4c] transition-colors">
+                    <h3 className="text-lg font-bold text-[#0a1628] mb-2 line-clamp-2 group-hover:text-[#1e3a5f] transition-colors duration-300">
                       {blog.title}
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-gray-500 text-sm mb-4 line-clamp-2">
+                    <p className="text-gray-500 text-sm mb-4 line-clamp-2 group-hover:text-gray-600 transition-colors duration-300">
                       {blog.excerpt}
                     </p>
 
                     {/* Author Info */}
-                    <div className="flex items-center justify-between pt-3 border-t border-[#e8f5f0]">
+                    <div className="flex items-center justify-between pt-3 border-t border-[#e8eef5]">
                       <div>
-                        <p className="text-sm font-semibold text-[#1a4a3a]">{blog.author}</p>
+                        <p className="text-sm font-semibold text-[#0a1628] group-hover:text-[#1e3a5f] transition-colors">
+                          {blog.author}
+                        </p>
                         <p className="text-xs text-gray-400">{blog.authorRole}</p>
                       </div>
-                      <button className="text-[#1a6d4c] hover:gap-2 transition-all flex items-center gap-1 text-sm font-medium">
+                      <motion.button 
+                        whileHover={{ x: 5 }}
+                        className="text-[#1e3a5f] hover:gap-2 transition-all flex items-center gap-1 text-sm font-medium"
+                      >
                         Read <FaChevronRight className="text-xs" />
-                      </button>
+                      </motion.button>
                     </div>
                   </div>
                 </motion.article>
@@ -346,15 +359,17 @@ const BlogsSection = () => {
           </motion.div>
         </AnimatePresence>
 
-       
-
         {/* Load More Button */}
         {filteredBlogs.length >= 6 && (
           <div className="text-center mt-10">
-            <button className="inline-flex items-center gap-2 border-2 border-[#1a6d4c] text-[#1a6d4c] px-8 py-3 rounded-full font-semibold hover:bg-[#1a6d4c] hover:text-white transition-all duration-300">
+            <motion.button 
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 border-2 border-[#1e3a5f] text-[#1e3a5f] px-8 py-3 rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#1e3a5f] hover:to-[#152c48] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+            >
               Load More Articles
               <FaChevronRight className="text-sm" />
-            </button>
+            </motion.button>
           </div>
         )}
       </div>
