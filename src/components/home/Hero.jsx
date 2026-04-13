@@ -13,15 +13,15 @@ const slides = [
     title: "Be a Donor",
     desc: "Help save premature babies by donating your precious breast milk. Every drop matters in their fight for life and growth.",
     image: "https://images.pexels.com/photos/6873559/pexels-photo-6873559.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1a6d4c/white?text=NeoLacta+Donor",
+    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Be+a+Donor",
     buttonText: "Become a Donor"
   },
   {
-    subtitle: "Welcome to Neolacta",
+    subtitle: "Welcome to NeoLacta",
     title: "Nurturing Lives",
     desc: "Exclusively human milk derived products which offer improved clinical outcomes and reduced hospital stay for premature infants in the NICU",
     image: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1a6d4c/white?text=NeoLacta+Nurturing",
+    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Nurturing+Lives",
     buttonText: "Know More"
   },
   {
@@ -29,7 +29,7 @@ const slides = [
     title: "For Tiny Warriors",
     desc: "100% natural, pasteurised and lyophilised human breast milk that gives premature babies the best chance at life",
     image: "https://images.pexels.com/photos/6696132/pexels-photo-6696132.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1a6d4c/white?text=NeoLacta+Warriors",
+    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=For+Tiny+Warriors",
     buttonText: "Our Products"
   },
   {
@@ -37,7 +37,7 @@ const slides = [
     title: "Better Outcomes",
     desc: "Backed by science and trusted by leading neonatologists and NICUs across India for faster recovery and better growth",
     image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1a6d4c/white?text=NeoLacta+Clinical",
+    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Better+Outcomes",
     buttonText: "See Evidence"
   }
 ];
@@ -52,7 +52,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-[#0a2e24]">
+    <div className="relative h-screen w-full overflow-hidden bg-[#0a1628]">
       {/* Background Image with Crossfade */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -67,8 +67,12 @@ const Hero = () => {
             src={currentSlide.image}
             alt={currentSlide.title}
             className="w-full h-full object-cover"
+            onError={(e) => {
+              e.target.src = currentSlide.fallbackImage;
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          {/* Navy Blue Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/90 via-[#0a1628]/60 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -106,7 +110,7 @@ const Hero = () => {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <p className="text-[#b8e6d4] font-semibold text-sm md:text-base tracking-wider mb-3 uppercase">
+                <p className="text-[#7ab3c8] font-semibold text-sm md:text-base tracking-wider mb-3 uppercase">
                   {currentSlide.subtitle}
                 </p>
 
@@ -118,21 +122,25 @@ const Hero = () => {
                   {currentSlide.desc}
                 </p>
 
-                <button className="bg-[#1a6d4c] hover:bg-[#0f5a3e] text-white font-semibold py-3.5 px-10 rounded-full text-base md:text-lg shadow-xl transition-all duration-300 cursor-pointer">
+                <motion.button 
+                  whileHover={{ scale: 1.05, y: -3 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-gradient-to-r from-[#1e3a5f] to-[#152c48] hover:from-[#152c48] hover:to-[#0f2440] text-white font-semibold py-3.5 px-10 rounded-full text-base md:text-lg shadow-xl transition-all duration-300 cursor-pointer hover:shadow-2xl"
+                >
                   {currentSlide.buttonText}
-                </button>
+                </motion.button>
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <button className="custom-prev absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#1a6d4c] p-3 md:p-4 rounded-full shadow-xl transition-all hover:scale-110 cursor-pointer pointer-events-auto">
-        <FaChevronLeft className="text-xl md:text-2xl" />
+      {/* Navigation Arrows - Navy Blue Theme */}
+      <button className="custom-prev absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-[#1e3a5f] text-[#1e3a5f] hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
+        <FaChevronLeft className="text-xl md:text-2xl group-hover:scale-110 transition-transform" />
       </button>
-      <button className="custom-next absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/90 hover:bg-white text-[#1a6d4c] p-3 md:p-4 rounded-full shadow-xl transition-all hover:scale-110 cursor-pointer pointer-events-auto">
-        <FaChevronRight className="text-xl md:text-2xl" />
+      <button className="custom-next absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-[#1e3a5f] text-[#1e3a5f] hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
+        <FaChevronRight className="text-xl md:text-2xl group-hover:scale-110 transition-transform" />
       </button>
 
       {/* WhatsApp Button */}
@@ -140,11 +148,23 @@ const Hero = () => {
         href="https://wa.me/919876543210"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20b859] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 pointer-events-auto"
+        className="fixed bottom-6 left-6 z-50 bg-[#25D366] hover:bg-[#20b859] w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl hover:scale-110 hover:shadow-2xl transition-all duration-300 pointer-events-auto group"
         aria-label="Chat on WhatsApp"
       >
-        <FaWhatsapp className="text-white text-2xl md:text-3xl" />
+        <FaWhatsapp className="text-white text-2xl md:text-3xl group-hover:scale-110 transition-transform" />
       </a>
+
+      {/* Animated Scroll Indicator */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1, repeat: Infinity, repeatType: "reverse" }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
+      >
+        <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center">
+          <div className="w-1 h-2 bg-white/60 rounded-full mt-2 animate-bounce"></div>
+        </div>
+      </motion.div>
     </div>
   );
 };
