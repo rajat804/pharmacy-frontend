@@ -14,14 +14,6 @@ import {
   FaMapMarkerAlt,
   FaArrowRight,
   FaClock,
-  FaHandHoldingHeart,
-  FaBaby,
-  FaNewspaper,
-  FaUsers,
-  FaUserMd,
-  FaBookOpen,
-  FaQuestionCircle,
-  FaLeaf
 } from 'react-icons/fa';
 import { FaHospitalUser } from "react-icons/fa6";
 
@@ -91,21 +83,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#0a2e24] text-white">
+    <footer className="bg-[#0a1628] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
         
         {/* Top Section with Logo and Social */}
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 pb-8 border-b border-white/10">
-          {/* Logo Section */}
+          {/* Logo Section - Removed "neolacta" text */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <div className="w-12 h-12 bg-gradient-to-br from-[#1a6d4c] to-[#0f5a3e] rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#1e3a5f] to-[#0f2440] rounded-2xl flex items-center justify-center shadow-lg">
                 <span className="text-white text-3xl font-bold">N</span>
               </div>
               <div>
-                <span className="font-bold text-2xl tracking-tighter">neolacta</span>
-                <p className="text-[10px] text-[#b8e6d4] -mt-1 tracking-wide">nurturing lives</p>
+                <p className="text-[11px] text-[#7ab3c8] -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
               </div>
             </div>
             <p className="text-sm text-white/70 max-w-xs">
@@ -117,7 +108,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl text-[#b8e6d4] mb-2 flex justify-center">
+                <div className="text-3xl text-[#7ab3c8] mb-2 flex justify-center">
                   {stat.icon}
                 </div>
                 <div className="text-xl font-bold text-white">{stat.value}</div>
@@ -131,9 +122,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {Object.values(footerLinks).map((section, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-semibold mb-4 text-[#b8e6d4] relative inline-block">
+              <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8] relative inline-block">
                 {section.title}
-                <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#1a6d4c] to-transparent rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#1e3a5f] to-transparent rounded-full"></div>
               </h3>
               <ul className="space-y-2">
                 {section.links.map((link, linkIdx) => (
@@ -141,8 +132,8 @@ const Footer = () => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `text-sm text-white/70 hover:text-[#b8e6d4] transition-colors duration-300 flex items-center gap-1 group ${
-                          isActive ? 'text-[#b8e6d4]' : ''
+                        `text-sm text-white/70 hover:text-[#7ab3c8] transition-colors duration-300 flex items-center gap-1 group ${
+                          isActive ? 'text-[#7ab3c8]' : ''
                         }`
                       }
                     >
@@ -160,25 +151,25 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12 pt-4 border-t border-white/10">
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#b8e6d4]">Get in Touch</h3>
+            <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8]">Get in Touch</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaPhone className="text-[#1a6d4c] mt-0.5" />
+                <FaPhone className="text-[#1e3a5f] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Toll Free Helpline</p>
-                  <p className="hover:text-[#b8e6d4] transition-colors">1800 - 419 - 2199</p>
+                  <p className="hover:text-[#7ab3c8] transition-colors">1800 - 419 - 2199</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaEnvelope className="text-[#1a6d4c] mt-0.5" />
+                <FaEnvelope className="text-[#1e3a5f] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Email Us</p>
-                  <p className="hover:text-[#b8e6d4] transition-colors">info@neolacta.com</p>
-                  <p className="hover:text-[#b8e6d4] transition-colors">support@neolacta.com</p>
+                  <p className="hover:text-[#7ab3c8] transition-colors">info@neolacta.com</p>
+                  <p className="hover:text-[#7ab3c8] transition-colors">support@neolacta.com</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaMapMarkerAlt className="text-[#1a6d4c] mt-0.5" />
+                <FaMapMarkerAlt className="text-[#1e3a5f] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Corporate Office</p>
                   <p>NeoLacta Lifesciences Pvt. Ltd.</p>
@@ -186,7 +177,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaClock className="text-[#1a6d4c] mt-0.5" />
+                <FaClock className="text-[#1e3a5f] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Support Hours</p>
                   <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
@@ -198,7 +189,7 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#b8e6d4]">Stay Updated</h3>
+            <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8]">Stay Updated</h3>
             <p className="text-sm text-white/70 mb-4">
               Subscribe to our newsletter for latest updates, clinical insights, and parenting tips.
             </p>
@@ -206,9 +197,9 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#1a6d4c] focus:ring-2 focus:ring-[#1a6d4c]/20 transition-all"
+                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#1e3a5f] focus:ring-2 focus:ring-[#1e3a5f]/20 transition-all"
               />
-              <button className="bg-gradient-to-r from-[#1a6d4c] to-[#0f5a3e] px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <button className="bg-gradient-to-r from-[#1e3a5f] to-[#0f2440] px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                 Subscribe
               </button>
             </form>
@@ -227,7 +218,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-10 h-10 bg-white/10 hover:bg-[#1a6d4c] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                    className="w-10 h-10 bg-white/10 hover:bg-[#1e3a5f] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
                   >
                     {social.icon}
                   </a>
@@ -244,22 +235,22 @@ const Footer = () => {
               © {currentYear} NeoLacta Lifesciences. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-6">
-              <NavLink to="/privacy-policy" className="text-white/50 hover:text-[#b8e6d4] transition-colors text-xs">
+              <NavLink to="/privacy-policy" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
                 Privacy Policy
               </NavLink>
-              <NavLink to="/terms-of-use" className="text-white/50 hover:text-[#b8e6d4] transition-colors text-xs">
+              <NavLink to="/terms-of-use" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
                 Terms of Use
               </NavLink>
-              <NavLink to="/cookie-policy" className="text-white/50 hover:text-[#b8e6d4] transition-colors text-xs">
+              <NavLink to="/cookie-policy" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
                 Cookie Policy
               </NavLink>
-              <NavLink to="/sitemap" className="text-white/50 hover:text-[#b8e6d4] transition-colors text-xs">
+              <NavLink to="/sitemap" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
                 Sitemap
               </NavLink>
             </div>
           </div>
           <div className="text-center mt-4 text-white/30 text-xs">
-            <p>💚 Dedicated to nurturing premature lives with 100% human milk</p>
+            <p>💙 Dedicated to nurturing premature lives with 100% human milk</p>
           </div>
         </div>
       </div>
