@@ -13,7 +13,7 @@ const slides = [
     title: "Be a Donor",
     desc: "Help save premature babies by donating your precious breast milk. Every drop matters in their fight for life and growth.",
     image: "https://images.pexels.com/photos/6873559/pexels-photo-6873559.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Be+a+Donor",
+    fallbackImage: "https://placehold.co/1600x900/1e293b/white?text=Be+a+Donor",
     buttonText: "Become a Donor"
   },
   {
@@ -21,7 +21,7 @@ const slides = [
     title: "Nurturing Lives",
     desc: "Exclusively human milk derived products which offer improved clinical outcomes and reduced hospital stay for premature infants in the NICU",
     image: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Nurturing+Lives",
+    fallbackImage: "https://placehold.co/1600x900/1e293b/white?text=Nurturing+Lives",
     buttonText: "Know More"
   },
   {
@@ -29,7 +29,7 @@ const slides = [
     title: "For Tiny Warriors",
     desc: "100% natural, pasteurised and lyophilised human breast milk that gives premature babies the best chance at life",
     image: "https://images.pexels.com/photos/6696132/pexels-photo-6696132.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=For+Tiny+Warriors",
+    fallbackImage: "https://placehold.co/1600x900/1e293b/white?text=For+Tiny+Warriors",
     buttonText: "Our Products"
   },
   {
@@ -37,7 +37,7 @@ const slides = [
     title: "Better Outcomes",
     desc: "Backed by science and trusted by leading neonatologists and NICUs across India for faster recovery and better growth",
     image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
-    fallbackImage: "https://placehold.co/1600x900/1e3a5f/white?text=Better+Outcomes",
+    fallbackImage: "https://placehold.co/1600x900/1e293b/white?text=Better+Outcomes",
     buttonText: "See Evidence"
   }
 ];
@@ -52,7 +52,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-[#0a1628]">
+    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-slate-800 to-slate-700">
       {/* Background Image with Crossfade */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -71,8 +71,9 @@ const Hero = () => {
               e.target.src = currentSlide.fallbackImage;
             }}
           />
-          {/* Navy Blue Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/90 via-[#0a1628]/60 to-transparent" />
+          {/* Professional Blue-Silver Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/85 via-slate-800/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -92,7 +93,6 @@ const Hero = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            {/* Empty slide - only for swiper navigation */}
             <div className="h-full w-full" />
           </SwiperSlide>
         ))}
@@ -110,22 +110,26 @@ const Hero = () => {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
-                <p className="text-[#7ab3c8] font-semibold text-sm md:text-base tracking-wider mb-3 uppercase">
+                {/* Subtitle with silver accent */}
+                <p className="text-blue-300 font-semibold text-sm md:text-base tracking-wider mb-3 uppercase">
                   {currentSlide.subtitle}
                 </p>
 
+                {/* Main Title */}
                 <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.2] mb-5">
                   {currentSlide.title}
                 </h1>
 
-                <p className="text-white/90 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
+                {/* Description */}
+                <p className="text-white/80 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
                   {currentSlide.desc}
                 </p>
 
+                {/* CTA Button with silver-blue gradient */}
                 <motion.button 
                   whileHover={{ scale: 1.05, y: -3 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-gradient-to-r from-[#1e3a5f] to-[#152c48] hover:from-[#152c48] hover:to-[#0f2440] text-white font-semibold py-3.5 px-10 rounded-full text-base md:text-lg shadow-xl transition-all duration-300 cursor-pointer hover:shadow-2xl"
+                  className="bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-600 hover:to-slate-500 text-white font-semibold py-3.5 px-10 rounded-full text-base md:text-lg shadow-xl transition-all duration-300 cursor-pointer hover:shadow-2xl"
                 >
                   {currentSlide.buttonText}
                 </motion.button>
@@ -135,11 +139,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows - Navy Blue Theme */}
-      <button className="custom-prev absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-[#1e3a5f] text-[#1e3a5f] hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
+      {/* Navigation Arrows - Professional Silver/Blue Theme */}
+      <button className="custom-prev absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-slate-700 text-slate-600 hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
         <FaChevronLeft className="text-xl md:text-2xl group-hover:scale-110 transition-transform" />
       </button>
-      <button className="custom-next absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-[#1e3a5f] text-[#1e3a5f] hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
+      <button className="custom-next absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-white/95 hover:bg-slate-700 text-slate-600 hover:text-white p-3 md:p-4 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer pointer-events-auto group">
         <FaChevronRight className="text-xl md:text-2xl group-hover:scale-110 transition-transform" />
       </button>
 
@@ -165,6 +169,9 @@ const Hero = () => {
           <div className="w-1 h-2 bg-white/60 rounded-full mt-2 animate-bounce"></div>
         </div>
       </motion.div>
+
+      {/* Subtle Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
     </div>
   );
 };
