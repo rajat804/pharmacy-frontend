@@ -11,7 +11,10 @@ import {
   FaSearch,
   FaShareAlt,
   FaClock,
-  FaTag
+  FaTag,
+  FaRegLightbulb,
+  FaChartLine,
+  FaUsers
 } from 'react-icons/fa';
 
 const BlogsSection = () => {
@@ -19,10 +22,10 @@ const BlogsSection = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const categories = [
-    { id: 'all', name: 'All Posts', icon: <FaNewspaper />, count: 12 },
-    { id: 'clinical', name: 'Clinical Insights', icon: <FaUserMd />, count: 4 },
-    { id: 'parenting', name: 'Parenting Tips', icon: <FaBaby />, count: 5 },
-    { id: 'nutrition', name: 'Infant Nutrition', icon: <FaHeartbeat />, count: 3 }
+    { id: 'all', name: 'All Posts', icon: <FaNewspaper />, count: 12, color: "from-blue-600 to-blue-500" },
+    { id: 'clinical', name: 'Clinical Insights', icon: <FaUserMd />, count: 4, color: "from-slate-600 to-slate-500" },
+    { id: 'parenting', name: 'Parenting Tips', icon: <FaBaby />, count: 5, color: "from-blue-500 to-blue-400" },
+    { id: 'nutrition', name: 'Infant Nutrition', icon: <FaHeartbeat />, count: 3, color: "from-slate-500 to-slate-400" }
   ];
 
   const blogs = [
@@ -143,7 +146,7 @@ const BlogsSection = () => {
   const featuredBlogs = blogs.filter(blog => blog.featured);
 
   return (
-    <section className="py-20 bg-gradient-to-b from-[#f5f7fa] to-white">
+    <section className="py-20 bg-gradient-to-b from-white via-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section Header */}
@@ -154,14 +157,15 @@ const BlogsSection = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <span className="text-[#1e3a5f] font-semibold text-sm uppercase tracking-wider bg-[#e8eef5] px-4 py-2 rounded-full inline-block mb-4">
-            Our Blog
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0a1628] mb-4">
-            Insights & <span className="text-[#1e3a5f]">Knowledge Hub</span>
+          <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <FaNewspaper className="text-blue-600 text-lg" />
+            <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Our Blog</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            Insights & <span className="text-blue-600">Knowledge Hub</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#1e3a5f] to-[#7ab3c8] mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 max-w-2xl mx-auto">
             Expert insights, clinical updates, and parenting tips for your little one's healthy journey
           </p>
         </motion.div>
@@ -177,13 +181,13 @@ const BlogsSection = () => {
           <div className="flex flex-col md:flex-row gap-4 justify-between items-center">
             {/* Search Box */}
             <div className="relative w-full md:w-96 group">
-              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-[#1e3a5f] transition-colors duration-300" />
+              <FaSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-blue-600 transition-colors duration-300" />
               <input
                 type="text"
                 placeholder="Search articles, topics, or tags..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-11 pr-4 py-3 rounded-full border border-[#e0e8f0] focus:border-[#1e3a5f] focus:outline-none focus:ring-2 focus:ring-[#1e3a5f]/20 transition-all duration-300"
+                className="w-full pl-11 pr-4 py-3 rounded-full border border-gray-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400/20 transition-all duration-300 bg-white"
               />
             </div>
 
@@ -197,8 +201,8 @@ const BlogsSection = () => {
                   onClick={() => setActiveCategory(category.id)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 ${
                     activeCategory === category.id
-                      ? 'bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-[#e8eef5] hover:text-[#1e3a5f] border border-[#e0e8f0]'
+                      ? 'bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow-md'
+                      : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-blue-600 border border-gray-200'
                   }`}
                 >
                   {category.icon}
@@ -222,8 +226,8 @@ const BlogsSection = () => {
             className="mb-12"
           >
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-2xl font-bold text-[#0a1628]">Featured Articles</h3>
-              <div className="w-16 h-0.5 bg-gradient-to-r from-[#1e3a5f] to-transparent"></div>
+              <h3 className="text-2xl font-bold text-slate-800">Featured Articles</h3>
+              <div className="w-16 h-0.5 bg-gradient-to-r from-blue-600 to-transparent"></div>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               {featuredBlogs.map((blog, index) => (
@@ -232,7 +236,7 @@ const BlogsSection = () => {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500"
+                  className="group relative overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500"
                 >
                   <div className="relative h-64 overflow-hidden">
                     <img
@@ -240,9 +244,9 @@ const BlogsSection = () => {
                       alt={blog.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a1628]/90 via-[#0a1628]/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                      <span className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                         Featured
                       </span>
                     </div>
@@ -255,7 +259,7 @@ const BlogsSection = () => {
                           <FaClock className="text-xs" /> {blog.readTime}
                         </span>
                       </div>
-                      <h3 className="text-2xl font-bold mb-2 group-hover:text-[#7ab3c8] transition-colors">
+                      <h3 className="text-2xl font-bold mb-2 group-hover:text-blue-300 transition-colors">
                         {blog.title}
                       </h3>
                       <p className="text-white/80 text-sm mb-3 line-clamp-2">{blog.excerpt}</p>
@@ -290,7 +294,7 @@ const BlogsSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-[#e0e8f0] group hover:-translate-y-3 hover:border-[#1e3a5f]/20"
+                  className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 group hover:-translate-y-3"
                 >
                   {/* Blog Image */}
                   <div className="relative h-48 overflow-hidden">
@@ -302,7 +306,7 @@ const BlogsSection = () => {
                     <div className="absolute top-3 right-3">
                       <motion.button 
                         whileHover={{ scale: 1.1 }}
-                        className="bg-white/90 hover:bg-gradient-to-r hover:from-[#1e3a5f] hover:to-[#152c48] text-gray-600 hover:text-white p-2 rounded-full transition-all duration-300 shadow-md"
+                        className="bg-white/90 hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-600 text-gray-600 hover:text-white p-2 rounded-full transition-all duration-300 shadow-md"
                       >
                         <FaShareAlt className="text-sm" />
                       </motion.button>
@@ -313,7 +317,7 @@ const BlogsSection = () => {
                   <div className="p-5">
                     {/* Category Tag */}
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="text-xs bg-[#e8eef5] text-[#1e3a5f] px-2 py-1 rounded-full group-hover:bg-[#1e3a5f] group-hover:text-white transition-all duration-300">
+                      <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                         {categories.find(c => c.id === blog.category)?.name}
                       </span>
                       <span className="text-xs text-gray-400 flex items-center gap-1">
@@ -322,7 +326,7 @@ const BlogsSection = () => {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-[#0a1628] mb-2 line-clamp-2 group-hover:text-[#1e3a5f] transition-colors duration-300">
+                    <h3 className="text-lg font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
                       {blog.title}
                     </h3>
 
@@ -332,16 +336,16 @@ const BlogsSection = () => {
                     </p>
 
                     {/* Author Info */}
-                    <div className="flex items-center justify-between pt-3 border-t border-[#e8eef5]">
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                       <div>
-                        <p className="text-sm font-semibold text-[#0a1628] group-hover:text-[#1e3a5f] transition-colors">
+                        <p className="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">
                           {blog.author}
                         </p>
                         <p className="text-xs text-gray-400">{blog.authorRole}</p>
                       </div>
                       <motion.button 
                         whileHover={{ x: 5 }}
-                        className="text-[#1e3a5f] hover:gap-2 transition-all flex items-center gap-1 text-sm font-medium"
+                        className="text-blue-600 hover:gap-2 transition-all flex items-center gap-1 text-sm font-medium"
                       >
                         Read <FaChevronRight className="text-xs" />
                       </motion.button>
@@ -365,7 +369,7 @@ const BlogsSection = () => {
             <motion.button 
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 border-2 border-[#1e3a5f] text-[#1e3a5f] px-8 py-3 rounded-full font-semibold hover:bg-gradient-to-r hover:from-[#1e3a5f] hover:to-[#152c48] hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
+              className="inline-flex items-center gap-2 border-2 border-slate-600 text-slate-600 px-8 py-3 rounded-full font-semibold hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-xl"
             >
               Load More Articles
               <FaChevronRight className="text-sm" />
