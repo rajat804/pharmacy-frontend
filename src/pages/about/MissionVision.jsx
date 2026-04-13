@@ -17,10 +17,9 @@ import {
   FaQuoteLeft,
   FaArrowRight,
   FaRegLightbulb,
-  FaTarget,
-  FaCompass
+  FaCompass,
 } from 'react-icons/fa';
-import { FaHospitalUser } from "react-icons/fa6";
+import { FaHospitalUser  } from "react-icons/fa6";
 
 const MissionVision = () => {
   const missionPoints = [
@@ -131,7 +130,7 @@ const MissionVision = () => {
             className="text-center mb-12"
           >
             <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
-              <FaTarget className="text-blue-600 text-lg" />
+              <FaBullseye className="text-blue-600 text-lg" />
               <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Our Mission</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
