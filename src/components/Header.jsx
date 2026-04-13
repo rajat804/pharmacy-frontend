@@ -96,18 +96,17 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[#e0ebe6] shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b border-[#e0e8f0] shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo - NeoLacta Brand Colors (Green/Teal) */}
+          {/* Logo - Navy Blue Theme (neolacta text removed) */}
           <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-gradient-to-br from-[#1a6d4c] via-[#0f5a3e] to-[#0a4a33] rounded-2xl flex items-center justify-center shadow-md transition-transform group-hover:scale-110">
+            <div className="w-11 h-11 bg-gradient-to-br from-[#1e3a5f] via-[#152c48] to-[#0f2440] rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
               <span className="text-white text-3xl font-bold">N</span>
             </div>
             <div>
-              <span className="font-bold text-2xl tracking-tighter text-[#1a4a3a]">neolacta</span>
-              <p className="text-[10px] text-[#1a6d4c] -mt-1 tracking-wide">nurturing lives</p>
+              <p className="text-[10px] text-[#7ab3c8] -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
             </div>
           </NavLink>
 
@@ -127,38 +126,45 @@ const Header = () => {
                 }}
               >
                 {item.megaMenu ? (
-                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1a6d4c] transition-all py-2 font-medium">
+                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1e3a5f] transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
                     {item.title}
-                    <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform" />
+                    <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform duration-300" />
                   </button>
                 ) : item.submenu ? (
-                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1a6d4c] transition-all py-2 font-medium">
+                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1e3a5f] transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
                     {item.title}
-                    <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform" />
+                    <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform duration-300" />
                   </button>
                 ) : (
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `py-2 transition-all font-medium ${isActive ? 'text-[#1a6d4c] font-semibold border-b-2 border-[#1a6d4c]' : 'text-gray-700 hover:text-[#1a6d4c]'}`
-                    }
-                  >
-                    {item.title}
-                  </NavLink>
-                )}
+                      `py-2 transition-all duration-300 font-medium relative ${
+                        isActive 
+                          ? 'text-[#1e3a5f] font-semibold' 
+                          : 'text-gray-700 hover:text-[#1e3a5f]'
+                      } after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#1e3a5f] after:to-[#7ab3c8] after:transition-all after:duration-300 hover:after:w-full ${
+                        isActive ? 'after:w-full' : ''
+                      }`}
+                    >
+                      {item.title}
+                    </NavLink>
+                  )
+                }
 
                 {/* Regular Dropdown */}
                 {item.submenu && openDropdown === item.title && !item.megaMenu && (
                   <div className="absolute top-full left-0 pt-4 w-64 z-50">
-                    <div className="bg-white rounded-2xl shadow-xl py-4 px-2 border border-[#e0ebe6]">
+                    <div className="bg-white rounded-2xl shadow-xl py-4 px-2 border border-[#e0e8f0] animate-fadeIn">
                       {item.submenu.map((sub, i) => (
                         <NavLink
                           key={i}
                           to={sub.path}
                           className={({ isActive }) =>
-                            `block px-5 py-2.5 rounded-xl mx-1 transition-all text-sm ${isActive
-                              ? 'bg-[#e8f5f0] text-[#1a6d4c] font-medium'
-                              : 'text-gray-700 hover:bg-[#f0f7f4] hover:text-[#1a6d4c]'
+                            `block px-5 py-2.5 rounded-xl mx-1 transition-all duration-300 text-sm ${
+                              isActive
+                                ? 'bg-[#e8f0f8] text-[#1e3a5f] font-medium'
+                                : 'text-gray-700 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
                             }`
                           }
                         >
@@ -171,38 +177,42 @@ const Header = () => {
 
                 {/* Mega Dropdown for Products */}
                 {item.megaMenu && openDropdown === "Products" && (
-                  <div className="absolute top-full left-0 pt-4 w-[820px] z-50">
-                    <div className="bg-white rounded-2xl shadow-xl border border-[#e0ebe6] overflow-hidden flex">
+                  <div className="absolute top-full left-0 pt-4 w-[820px] z-50 animate-fadeIn">
+                    <div className="bg-white rounded-2xl shadow-xl border border-[#e0e8f0] overflow-hidden flex">
                       
                       {/* Left Panel - Categories */}
-                      <div className="w-5/12 bg-[#f8fbf9] py-6">
+                      <div className="w-5/12 bg-[#f8fafc] py-6">
                         {item.categories.map((cat, i) => (
                           <div
                             key={i}
-                            className={`px-6 py-3.5 flex items-center justify-between cursor-pointer transition-all mx-2 rounded-xl
+                            className={`px-6 py-3.5 flex items-center justify-between cursor-pointer transition-all duration-300 mx-2 rounded-xl
                               ${activeCategory?.title === cat.title 
-                                ? 'bg-[#1a6d4c] text-white shadow-md' 
-                                : 'text-gray-700 hover:bg-[#e8f5f0] hover:text-[#1a6d4c]'
+                                ? 'bg-[#1e3a5f] text-white shadow-md translate-x-1' 
+                                : 'text-gray-700 hover:bg-[#e8f0f8] hover:text-[#1e3a5f] hover:translate-x-1'
                               }`}
                             onMouseEnter={() => setActiveCategory(cat)}
                           >
                             <div className="font-medium text-sm">{cat.title}</div>
                             {cat.subItems.length > 0 && (
-                              <span className="text-lg font-light">{activeCategory?.title === cat.title ? '→' : '›'}</span>
+                              <span className="text-lg font-light transition-transform duration-300 group-hover:translate-x-1">
+                                {activeCategory?.title === cat.title ? '→' : '›'}
+                              </span>
                             )}
                           </div>
                         ))}
                       </div>
 
                       {/* Right Panel - Sub Products */}
-                      <div className="w-7/12 bg-gradient-to-br from-[#f0f7f4] to-[#e8f5f0] py-6 px-6">
+                      <div className="w-7/12 bg-gradient-to-br from-[#f0f5fa] to-[#e8f0f8] py-6 px-6">
                         {activeCategory?.subItems?.length > 0 ? (
                           activeCategory.subItems.map((sub, idx) => (
                             <NavLink
                               key={idx}
                               to={sub.path}
                               className={({ isActive }) =>
-                                `block px-5 py-3.5 bg-white hover:bg-[#1a6d4c] hover:text-white rounded-xl mb-3 text-gray-800 hover:shadow-md transition-all text-sm font-medium ${isActive ? 'ring-2 ring-[#1a6d4c] bg-[#1a6d4c] text-white' : ''}`
+                                `block px-5 py-3.5 bg-white hover:bg-[#1e3a5f] hover:text-white rounded-xl mb-3 text-gray-800 hover:shadow-md transition-all duration-300 text-sm font-medium hover:translate-x-2 ${
+                                  isActive ? 'ring-2 ring-[#1e3a5f] bg-[#1e3a5f] text-white' : ''
+                                }`
                               }
                             >
                               {sub.title}
@@ -210,7 +220,7 @@ const Header = () => {
                           ))
                         ) : (
                           <div className="text-center py-10">
-                            <p className="text-[#1a6d4c] font-medium">No sub-products available</p>
+                            <p className="text-[#1e3a5f] font-medium">No sub-products available</p>
                             <p className="text-gray-400 text-sm mt-1">Please select a category</p>
                           </div>
                         )}
@@ -222,14 +232,14 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Enquire Button - Brand Colors */}
+          {/* Enquire Button - Navy Blue Theme */}
           <NavLink
             to="/enquire"
             className={({ isActive }) =>
-              `hidden md:block px-7 py-3 rounded-xl font-semibold text-sm shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 
+              `hidden md:block px-7 py-3 rounded-xl font-semibold text-sm shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105 
                ${isActive 
-                 ? 'bg-gradient-to-r from-[#0f5a3e] to-[#1a6d4c]' 
-                 : 'bg-gradient-to-r from-[#1a6d4c] to-[#0f5a3e] hover:from-[#0f5a3e] hover:to-[#0a4a33]'
+                 ? 'bg-gradient-to-r from-[#152c48] to-[#1e3a5f]' 
+                 : 'bg-gradient-to-r from-[#1e3a5f] to-[#152c48] hover:from-[#152c48] hover:to-[#0f2440]'
                } text-white`
             }
           >
@@ -238,7 +248,7 @@ const Header = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-3xl text-[#1a6d4c]"
+            className="md:hidden text-3xl text-[#1e3a5f] transition-all duration-300 hover:scale-110 hover:rotate-90"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
           >
             {isMobileOpen ? <MdClose /> : <MdMenu />}
@@ -248,27 +258,31 @@ const Header = () => {
 
       {/* Mobile Menu - Complete Implementation */}
       {isMobileOpen && (
-        <div className="md:hidden bg-white border-t border-[#e0ebe6] py-6 px-6 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden bg-white border-t border-[#e0e8f0] py-6 px-6 max-h-[80vh] overflow-y-auto animate-slideDown">
           <div className="space-y-2">
             {menuItems.map((item, idx) => (
-              <div key={idx} className="border-b border-[#e8f5f0] last:border-0 pb-2">
+              <div key={idx} className="border-b border-[#e8f0f8] last:border-0 pb-2">
                 {item.submenu || item.megaMenu ? (
                   <>
                     <button 
-                      className="flex items-center justify-between w-full py-3 text-gray-800 font-medium hover:text-[#1a6d4c] transition-colors"
+                      className="flex items-center justify-between w-full py-3 text-gray-800 font-medium hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1"
                       onClick={() => setOpenDropdown(openDropdown === item.title ? null : item.title)}
                     >
                       <span>{item.title}</span>
-                      <MdKeyboardArrowDown className={`text-xl transition-transform ${openDropdown === item.title ? 'rotate-180' : ''}`} />
+                      <MdKeyboardArrowDown className={`text-xl transition-all duration-300 ${openDropdown === item.title ? 'rotate-180' : ''}`} />
                     </button>
                     {openDropdown === item.title && (
-                      <div className="pl-4 pb-2 space-y-1">
+                      <div className="pl-4 pb-2 space-y-1 animate-slideDown">
                         {item.submenu?.map((sub, subIdx) => (
                           <NavLink
                             key={subIdx}
                             to={sub.path}
                             className={({ isActive }) =>
-                              `block py-2.5 px-3 rounded-lg text-sm ${isActive ? 'bg-[#e8f5f0] text-[#1a6d4c] font-medium' : 'text-gray-600 hover:bg-[#f0f7f4] hover:text-[#1a6d4c]'}`
+                              `block py-2.5 px-3 rounded-lg text-sm transition-all duration-300 ${
+                                isActive 
+                                  ? 'bg-[#e8f0f8] text-[#1e3a5f] font-medium' 
+                                  : 'text-gray-600 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
+                              }`
                             }
                             onClick={() => setIsMobileOpen(false)}
                           >
@@ -277,13 +291,17 @@ const Header = () => {
                         ))}
                         {item.megaMenu && item.categories?.map((cat, catIdx) => (
                           <div key={catIdx} className="mt-3">
-                            <div className="font-semibold text-[#1a4a3a] py-2 text-sm">{cat.title}</div>
+                            <div className="font-semibold text-[#1e3a5f] py-2 text-sm">{cat.title}</div>
                             {cat.subItems?.map((sub, subIdx) => (
                               <NavLink
                                 key={subIdx}
                                 to={sub.path}
                                 className={({ isActive }) =>
-                                  `block py-2 pl-4 rounded-lg text-sm ${isActive ? 'bg-[#e8f5f0] text-[#1a6d4c]' : 'text-gray-600 hover:bg-[#f0f7f4] hover:text-[#1a6d4c]'}`
+                                  `block py-2 pl-4 rounded-lg text-sm transition-all duration-300 ${
+                                    isActive 
+                                      ? 'bg-[#e8f0f8] text-[#1e3a5f]' 
+                                      : 'text-gray-600 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
+                                  }`
                                 }
                                 onClick={() => setIsMobileOpen(false)}
                               >
@@ -299,7 +317,11 @@ const Header = () => {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `block py-3 font-medium ${isActive ? 'text-[#1a6d4c] border-l-4 border-[#1a6d4c] pl-3' : 'text-gray-800 hover:text-[#1a6d4c]'}`
+                      `block py-3 font-medium transition-all duration-300 ${
+                        isActive 
+                          ? 'text-[#1e3a5f] border-l-4 border-[#1e3a5f] pl-3' 
+                          : 'text-gray-800 hover:text-[#1e3a5f] hover:translate-x-1'
+                      }`
                     }
                     onClick={() => setIsMobileOpen(false)}
                   >
@@ -312,7 +334,7 @@ const Header = () => {
             {/* Mobile Enquire Button */}
             <NavLink
               to="/enquire"
-              className="block mt-4 text-center bg-gradient-to-r from-[#1a6d4c] to-[#0f5a3e] text-white py-3.5 rounded-xl font-semibold"
+              className="block mt-4 text-center bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
               onClick={() => setIsMobileOpen(false)}
             >
               Enquire Now !
@@ -320,6 +342,39 @@ const Header = () => {
           </div>
         </div>
       )}
+
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fadeIn {
+          animation: fadeIn 0.3s ease-out;
+        }
+        
+        .animate-slideDown {
+          animation: slideDown 0.3s ease-out;
+        }
+      `}</style>
     </header>
   );
 };
