@@ -96,17 +96,17 @@ const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[#e0e8f0] shadow-sm">
+    <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo - Navy Blue Theme (neolacta text removed) */}
+          {/* Logo - Professional Blue/Silver Theme */}
           <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-gradient-to-br from-[#1e3a5f] via-[#152c48] to-[#0f2440] rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
+            <div className="w-11 h-11 bg-gradient-to-br from-slate-700 to-slate-600 rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg">
               <span className="text-white text-3xl font-bold">N</span>
             </div>
             <div>
-              <p className="text-[10px] text-[#7ab3c8] -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
+              <p className="text-[10px] text-blue-600 -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
             </div>
           </NavLink>
 
@@ -126,12 +126,12 @@ const Header = () => {
                 }}
               >
                 {item.megaMenu ? (
-                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1e3a5f] transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
+                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
                     {item.title}
                     <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform duration-300" />
                   </button>
                 ) : item.submenu ? (
-                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-[#1e3a5f] transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
+                  <button className="flex items-center gap-1.5 text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 font-medium group-hover:translate-y-[-2px]">
                     {item.title}
                     <MdKeyboardArrowDown className="text-xl group-hover:rotate-180 transition-transform duration-300" />
                   </button>
@@ -141,9 +141,9 @@ const Header = () => {
                     className={({ isActive }) =>
                       `py-2 transition-all duration-300 font-medium relative ${
                         isActive 
-                          ? 'text-[#1e3a5f] font-semibold' 
-                          : 'text-gray-700 hover:text-[#1e3a5f]'
-                      } after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-[#1e3a5f] after:to-[#7ab3c8] after:transition-all after:duration-300 hover:after:w-full ${
+                          ? 'text-blue-600 font-semibold' 
+                          : 'text-gray-700 hover:text-blue-600'
+                      } after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-600 after:to-slate-400 after:transition-all after:duration-300 hover:after:w-full ${
                         isActive ? 'after:w-full' : ''
                       }`}
                     >
@@ -155,7 +155,7 @@ const Header = () => {
                 {/* Regular Dropdown */}
                 {item.submenu && openDropdown === item.title && !item.megaMenu && (
                   <div className="absolute top-full left-0 pt-4 w-64 z-50">
-                    <div className="bg-white rounded-2xl shadow-xl py-4 px-2 border border-[#e0e8f0] animate-fadeIn">
+                    <div className="bg-white rounded-2xl shadow-xl py-4 px-2 border border-gray-100 animate-fadeIn">
                       {item.submenu.map((sub, i) => (
                         <NavLink
                           key={i}
@@ -163,8 +163,8 @@ const Header = () => {
                           className={({ isActive }) =>
                             `block px-5 py-2.5 rounded-xl mx-1 transition-all duration-300 text-sm ${
                               isActive
-                                ? 'bg-[#e8f0f8] text-[#1e3a5f] font-medium'
-                                : 'text-gray-700 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
+                                ? 'bg-blue-50 text-blue-600 font-medium'
+                                : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600 hover:translate-x-1'
                             }`
                           }
                         >
@@ -178,23 +178,23 @@ const Header = () => {
                 {/* Mega Dropdown for Products */}
                 {item.megaMenu && openDropdown === "Products" && (
                   <div className="absolute top-full left-0 pt-4 w-[820px] z-50 animate-fadeIn">
-                    <div className="bg-white rounded-2xl shadow-xl border border-[#e0e8f0] overflow-hidden flex">
+                    <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden flex">
                       
                       {/* Left Panel - Categories */}
-                      <div className="w-5/12 bg-[#f8fafc] py-6">
+                      <div className="w-5/12 bg-gray-50 py-6">
                         {item.categories.map((cat, i) => (
                           <div
                             key={i}
                             className={`px-6 py-3.5 flex items-center justify-between cursor-pointer transition-all duration-300 mx-2 rounded-xl
                               ${activeCategory?.title === cat.title 
-                                ? 'bg-[#1e3a5f] text-white shadow-md translate-x-1' 
-                                : 'text-gray-700 hover:bg-[#e8f0f8] hover:text-[#1e3a5f] hover:translate-x-1'
+                                ? 'bg-gradient-to-r from-slate-700 to-slate-600 text-white shadow-md translate-x-1' 
+                                : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600 hover:translate-x-1'
                               }`}
                             onMouseEnter={() => setActiveCategory(cat)}
                           >
                             <div className="font-medium text-sm">{cat.title}</div>
                             {cat.subItems.length > 0 && (
-                              <span className="text-lg font-light transition-transform duration-300 group-hover:translate-x-1">
+                              <span className="text-lg font-light transition-transform duration-300">
                                 {activeCategory?.title === cat.title ? '→' : '›'}
                               </span>
                             )}
@@ -203,15 +203,15 @@ const Header = () => {
                       </div>
 
                       {/* Right Panel - Sub Products */}
-                      <div className="w-7/12 bg-gradient-to-br from-[#f0f5fa] to-[#e8f0f8] py-6 px-6">
+                      <div className="w-7/12 bg-gradient-to-br from-gray-50 to-white py-6 px-6">
                         {activeCategory?.subItems?.length > 0 ? (
                           activeCategory.subItems.map((sub, idx) => (
                             <NavLink
                               key={idx}
                               to={sub.path}
                               className={({ isActive }) =>
-                                `block px-5 py-3.5 bg-white hover:bg-[#1e3a5f] hover:text-white rounded-xl mb-3 text-gray-800 hover:shadow-md transition-all duration-300 text-sm font-medium hover:translate-x-2 ${
-                                  isActive ? 'ring-2 ring-[#1e3a5f] bg-[#1e3a5f] text-white' : ''
+                                `block px-5 py-3.5 bg-white hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-600 hover:text-white rounded-xl mb-3 text-gray-800 hover:shadow-md transition-all duration-300 text-sm font-medium hover:translate-x-2 ${
+                                  isActive ? 'ring-2 ring-blue-600 bg-blue-600 text-white' : ''
                                 }`
                               }
                             >
@@ -220,7 +220,7 @@ const Header = () => {
                           ))
                         ) : (
                           <div className="text-center py-10">
-                            <p className="text-[#1e3a5f] font-medium">No sub-products available</p>
+                            <p className="text-blue-600 font-medium">No sub-products available</p>
                             <p className="text-gray-400 text-sm mt-1">Please select a category</p>
                           </div>
                         )}
@@ -232,14 +232,14 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Enquire Button - Navy Blue Theme */}
+          {/* Enquire Button - Professional Blue/Silver Theme */}
           <NavLink
             to="/enquire"
             className={({ isActive }) =>
               `hidden md:block px-7 py-3 rounded-xl font-semibold text-sm shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-105 
                ${isActive 
-                 ? 'bg-gradient-to-r from-[#152c48] to-[#1e3a5f]' 
-                 : 'bg-gradient-to-r from-[#1e3a5f] to-[#152c48] hover:from-[#152c48] hover:to-[#0f2440]'
+                 ? 'bg-gradient-to-r from-slate-600 to-slate-500' 
+                 : 'bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-600 hover:to-slate-500'
                } text-white`
             }
           >
@@ -248,7 +248,7 @@ const Header = () => {
 
           {/* Mobile Toggle */}
           <button
-            className="md:hidden text-3xl text-[#1e3a5f] transition-all duration-300 hover:scale-110 hover:rotate-90"
+            className="md:hidden text-3xl text-slate-600 transition-all duration-300 hover:scale-110 hover:rotate-90"
             onClick={() => setIsMobileOpen(!isMobileOpen)}
           >
             {isMobileOpen ? <MdClose /> : <MdMenu />}
@@ -258,14 +258,14 @@ const Header = () => {
 
       {/* Mobile Menu - Complete Implementation */}
       {isMobileOpen && (
-        <div className="md:hidden bg-white border-t border-[#e0e8f0] py-6 px-6 max-h-[80vh] overflow-y-auto animate-slideDown">
+        <div className="md:hidden bg-white border-t border-gray-100 py-6 px-6 max-h-[80vh] overflow-y-auto animate-slideDown">
           <div className="space-y-2">
             {menuItems.map((item, idx) => (
-              <div key={idx} className="border-b border-[#e8f0f8] last:border-0 pb-2">
+              <div key={idx} className="border-b border-gray-100 last:border-0 pb-2">
                 {item.submenu || item.megaMenu ? (
                   <>
                     <button 
-                      className="flex items-center justify-between w-full py-3 text-gray-800 font-medium hover:text-[#1e3a5f] transition-all duration-300 hover:translate-x-1"
+                      className="flex items-center justify-between w-full py-3 text-gray-800 font-medium hover:text-blue-600 transition-all duration-300 hover:translate-x-1"
                       onClick={() => setOpenDropdown(openDropdown === item.title ? null : item.title)}
                     >
                       <span>{item.title}</span>
@@ -280,8 +280,8 @@ const Header = () => {
                             className={({ isActive }) =>
                               `block py-2.5 px-3 rounded-lg text-sm transition-all duration-300 ${
                                 isActive 
-                                  ? 'bg-[#e8f0f8] text-[#1e3a5f] font-medium' 
-                                  : 'text-gray-600 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
+                                  ? 'bg-blue-50 text-blue-600 font-medium' 
+                                  : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:translate-x-1'
                               }`
                             }
                             onClick={() => setIsMobileOpen(false)}
@@ -291,7 +291,7 @@ const Header = () => {
                         ))}
                         {item.megaMenu && item.categories?.map((cat, catIdx) => (
                           <div key={catIdx} className="mt-3">
-                            <div className="font-semibold text-[#1e3a5f] py-2 text-sm">{cat.title}</div>
+                            <div className="font-semibold text-blue-600 py-2 text-sm">{cat.title}</div>
                             {cat.subItems?.map((sub, subIdx) => (
                               <NavLink
                                 key={subIdx}
@@ -299,8 +299,8 @@ const Header = () => {
                                 className={({ isActive }) =>
                                   `block py-2 pl-4 rounded-lg text-sm transition-all duration-300 ${
                                     isActive 
-                                      ? 'bg-[#e8f0f8] text-[#1e3a5f]' 
-                                      : 'text-gray-600 hover:bg-[#f0f5fa] hover:text-[#1e3a5f] hover:translate-x-1'
+                                      ? 'bg-blue-50 text-blue-600' 
+                                      : 'text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:translate-x-1'
                                   }`
                                 }
                                 onClick={() => setIsMobileOpen(false)}
@@ -319,8 +319,8 @@ const Header = () => {
                     className={({ isActive }) =>
                       `block py-3 font-medium transition-all duration-300 ${
                         isActive 
-                          ? 'text-[#1e3a5f] border-l-4 border-[#1e3a5f] pl-3' 
-                          : 'text-gray-800 hover:text-[#1e3a5f] hover:translate-x-1'
+                          ? 'text-blue-600 border-l-4 border-blue-600 pl-3' 
+                          : 'text-gray-800 hover:text-blue-600 hover:translate-x-1'
                       }`
                     }
                     onClick={() => setIsMobileOpen(false)}
@@ -334,7 +334,7 @@ const Header = () => {
             {/* Mobile Enquire Button */}
             <NavLink
               to="/enquire"
-              className="block mt-4 text-center bg-gradient-to-r from-[#1e3a5f] to-[#152c48] text-white py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
+              className="block mt-4 text-center bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-600 hover:to-slate-500 text-white py-3.5 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02]"
               onClick={() => setIsMobileOpen(false)}
             >
               Enquire Now !
