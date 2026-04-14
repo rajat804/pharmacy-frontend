@@ -17,10 +17,11 @@ const menuItems = [
     title: "Products",
     megaMenu: true,
     categories: [
-      { title: "Pasteurised Human Breast Milk", path: "/products/pasteurised", subItems: [] },
+      { title: "Pasteurised Human Breast Milk", subItems: [
+        {title: "Neolact PHBM 70", path: "/products/phbm70"}
+      ] },
       {
         title: "Lyophilised Human Milk Powder",
-        path: "/products/lyophilised",
         subItems: [
           { title: "Neolact N70", path: "/products/n70" },
           { title: "Neolact N70 Prime", path: "/products/n70-prime" },
@@ -28,7 +29,6 @@ const menuItems = [
       },
       {
         title: "Human Milk Derived Fortifiers",
-        path: "/products/fortifiers",
         subItems: [
           { title: "Neolact MMF", path: "/products/mmf" },
           { title: "Neolact MMF PLUS", path: "/products/mmf-plus" },
@@ -36,7 +36,6 @@ const menuItems = [
       },
       {
         title: "Sucrose 24% w/v Oral Solution",
-        path: "/products/sos",
         subItems: [{ title: "Neolact SOS", path: "/products/sos" }]
       },
     ]
@@ -211,7 +210,7 @@ const Header = () => {
                               to={sub.path}
                               className={({ isActive }) =>
                                 `block px-5 py-3.5 bg-white hover:bg-gradient-to-r hover:from-slate-700 hover:to-slate-600 hover:text-white rounded-xl mb-3 text-gray-800 hover:shadow-md transition-all duration-300 text-sm font-medium hover:translate-x-2 ${
-                                  isActive ? 'ring-2 ring-blue-600 bg-blue-600 text-white' : ''
+                                  isActive ? 'ring-2 ring-blue-600 bg-blue-600 text-black' : ''
                                 }`
                               }
                             >
