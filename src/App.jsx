@@ -18,12 +18,22 @@ import WhyDonate from './pages/donor/WhyDonate';
 import BecomeDonor from './pages/donor/BecomeDonor';
 import DonorGuidelines from './pages/donor/DonorGuidelines';
 import DonorTestimonials from './pages/donor/DonorTestimonials';
+import BenefitsHumanMilk from './pages/parents/BenefitsHumanMilk';
+import MakeRightChoice from './pages/parents/MakeRightChoice';
+import LactationSupport from './pages/parents/LactationSupport';
+import SuccessStories from './pages/parents/SuccessStories';
+import ParentTestimonials from './pages/parents/ParentTestimonials';
+import FAQParents from './pages/parents/FAQParents';
+import Publications from './pages/hcps/Publications';
+import CaseStudies from './pages/hcps/CaseStudies';
+import Conferences from './pages/hcps/Conferences';
+import HCPTestimonials from './pages/hcps/HCPTestimonials';
 
 const App = () => {
   return (
     <>
       <Router>
-      <ScrollToTop />
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -42,11 +52,16 @@ const App = () => {
           <Route path='/donor/guidelines' element={<DonorGuidelines />} />
           <Route path='/donor/testimonials' element={<DonorTestimonials />} />
           <Route path='/donor/faq' element={<DonorTestimonials />} />
-
-
-
-
-
+          <Route path='/parents/benefits' element={<BenefitsHumanMilk />} />
+          <Route path='/parents/right-choice' element={<MakeRightChoice />} />
+          <Route path='/parents/lactation-support' element={<LactationSupport />} />
+          <Route path='/parents/success-stories' element={<SuccessStories />} />
+          <Route path='/parents/testimonials' element={<ParentTestimonials />} />
+          <Route path='/parents/faq' element={<FAQParents />} />
+          <Route path='/hcps/publications' element={<Publications />} />
+          <Route path='/hcps/case-studies' element={<CaseStudies />} />
+          <Route path='/hcps/conferences' element={<Conferences />} />
+          <Route path='/hcps/testimonials' element={<HCPTestimonials />} />
         </Routes>
         <Footer />
       </Router>
