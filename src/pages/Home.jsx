@@ -12,7 +12,7 @@ const slides = [
     subtitle: "Welcome to Neoverse",
     title: "The Start Every Tiny Life Deserves",
     desc: "Global Science. Indian Hearts. Bridging the gap between global research and Indian NICUs.",
-    image: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    image: "https://images.unsplash.com/photo-1599727277757-3f54e54ea618?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     buttonText: "Explore Our Mission"
   },
   {
@@ -87,7 +87,7 @@ const Home = () => {
 
   // Pharmaceutical/Medical themed images
   const medicalImages = {
-    heroBg: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop",
+    heroBg: "https://images.unsplash.com/photo-1599727277757-3f54e54ea618?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     missionImage: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNQZQfgY2ZddAAsiB0_Rl5zgvA3HuXu-4DMg&s",
     productImage: "https://images.pexels.com/photos/6696132/pexels-photo-6696132.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     labImage: "https://images.pexels.com/photos/6873559/pexels-photo-6873559.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
