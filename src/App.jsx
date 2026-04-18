@@ -28,6 +28,8 @@ import Publications from './pages/hcps/Publications';
 import CaseStudies from './pages/hcps/CaseStudies';
 import Conferences from './pages/hcps/Conferences';
 import HCPTestimonials from './pages/hcps/HCPTestimonials';
+import Contact from './pages/Contact';
+import Career from './pages/Carrer';
 
 const App = () => {
   return (
@@ -62,6 +64,9 @@ const App = () => {
           <Route path='/hcps/case-studies' element={<CaseStudies />} />
           <Route path='/hcps/conferences' element={<Conferences />} />
           <Route path='/hcps/testimonials' element={<HCPTestimonials />} />
+          <Route path='/carrer' element={<Career />} />
+          <Route path='/contact' element={<Contact />} />
+
         </Routes>
         <Footer />
       </Router>
