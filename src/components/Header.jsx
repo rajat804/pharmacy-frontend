@@ -78,15 +78,19 @@ const menuItems = [
       { title: "Newsletter Sign Up", path: "/learn/newsletter" },
     ],
   },
-  {
-    title: "Support",
-    submenu: [
-      { title: "Contact Us", path: "/support/contact" },
-      { title: "Customer Support", path: "/support/customer" },
-      { title: "Request Information", path: "/support/request" },
-      { title: "Careers", path: "/support/careers" },
-    ],
-  },
+  // {
+  //   title: "Support",
+  //   submenu: [
+  //     { title: "Contact Us", path: "/support/contact" },
+  //     { title: "Customer Support", path: "/support/customer" },
+  //     { title: "Request Information", path: "/support/request" },
+  //     { title: "Careers", path: "/support/careers" },
+  //   ],
+  // },
+  { title: "Carrer", path: "/carrer" },
+  { title: "Contact", path: "/contact" },
+
+
 ];
 
 const Header = () => {
