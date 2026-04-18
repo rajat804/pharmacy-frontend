@@ -62,12 +62,12 @@ const menuItems = [
   //   ],
   // },
   {
-    title: "HCPs",
+    title: "Research & Analysis",
     submenu: [
       { title: "Publications", path: "/hcps/publications" },
       { title: "Case Studies", path: "/hcps/case-studies" },
       { title: "Conferences", path: "/hcps/conferences" },
-      { title: "HCP Testimonials", path: "/hcps/testimonials" },
+      // { title: "HCP Testimonials", path: "/hcps/testimonials" },
     ],
   },
   {
