@@ -40,27 +40,27 @@ const menuItems = [
       },
     ]
   },
-  {
-    title: "Donor",
-    submenu: [
-      { title: "Why Donate", path: "/donor/why-donate" },
-      { title: "Become a Donor", path: "/donor/become-donor" },
-      { title: "Donor Selection Guidelines", path: "/donor/guidelines" },
-      { title: "Donor Testimonials", path: "/donor/testimonials" },
-      { title: "FAQ for Donors", path: "/donor/faq" },
-    ],
-  },
-  {
-    title: "Parents",
-    submenu: [
-      { title: "Benefits of Human Milk", path: "/parents/benefits" },
-      { title: "Make the Right Choice", path: "/parents/right-choice" },
-      { title: "Lactation Support", path: "/parents/lactation-support" },
-      { title: "Success Stories", path: "/parents/success-stories" },
-      { title: "Parent Testimonials", path: "/parents/testimonials" },
-      { title: "FAQs for Parents", path: "/parents/faq" },
-    ],
-  },
+  // {
+  //   title: "Donor",
+  //   submenu: [
+  //     { title: "Why Donate", path: "/donor/why-donate" },
+  //     { title: "Become a Donor", path: "/donor/become-donor" },
+  //     { title: "Donor Selection Guidelines", path: "/donor/guidelines" },
+  //     { title: "Donor Testimonials", path: "/donor/testimonials" },
+  //     { title: "FAQ for Donors", path: "/donor/faq" },
+  //   ],
+  // },
+  // {
+  //   title: "Parents",
+  //   submenu: [
+  //     { title: "Benefits of Human Milk", path: "/parents/benefits" },
+  //     { title: "Make the Right Choice", path: "/parents/right-choice" },
+  //     { title: "Lactation Support", path: "/parents/lactation-support" },
+  //     { title: "Success Stories", path: "/parents/success-stories" },
+  //     { title: "Parent Testimonials", path: "/parents/testimonials" },
+  //     { title: "FAQs for Parents", path: "/parents/faq" },
+  //   ],
+  // },
   {
     title: "HCPs",
     submenu: [
