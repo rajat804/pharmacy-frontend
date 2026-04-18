@@ -164,8 +164,7 @@ const Footer = () => {
                 <FaEnvelope className="text-[#1e3a5f] mt-0.5" />
                 <div>
                   <p className="font-semibold text-white">Email Us</p>
-                  <p className="hover:text-[#7ab3c8] transition-colors">info@neolacta.com</p>
-                  <p className="hover:text-[#7ab3c8] transition-colors">support@neolacta.com</p>
+                  <p className="hover:text-[#7ab3c8] transition-colors">customersupport@neoverse.in</p>
                 </div>
               </div>
               <div className="flex items-start gap-3 text-sm text-white/70">
