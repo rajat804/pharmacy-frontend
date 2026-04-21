@@ -28,19 +28,19 @@ const PHBM70Product = () => {
       title: "Immunological Protection",
       description: "Rich in antibodies and immune factors that help protect against infections.",
       icon: <FaShieldAlt />,
-      color: "from-slate-600 to-slate-500"
+      color: "from-blue-500 to-blue-400"
     },
     {
       title: "Better Tolerance",
       description: "100% human milk composition ensures excellent digestive tolerance in preterm infants.",
       icon: <FaHeartbeat />,
-      color: "from-blue-500 to-blue-400"
+      color: "from-blue-600 to-blue-500"
     },
     {
       title: "Reduced NEC Risk",
       description: "Clinically proven to reduce the risk of Necrotizing Enterocolitis in premature babies.",
       icon: <FaLeaf />,
-      color: "from-slate-500 to-slate-400"
+      color: "from-blue-500 to-blue-400"
     }
   ];
 
@@ -63,10 +63,10 @@ const PHBM70Product = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/10 to-white">
       
       {/* Hero Section with Background Image */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
@@ -74,7 +74,7 @@ const PHBM70Product = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -84,22 +84,22 @@ const PHBM70Product = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
+            <span className="text-blue-200 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
               Premium Product
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              NeoLacta <span className="text-blue-300">PHBM 70</span>
+              NeoLacta <span className="text-blue-200">PHBM 70</span>
             </h1>
             <p className="text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
               Standardised & Pasteurised Human Milk – The gold standard for premature infant nutrition
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Product Overview - Left Text, Right Image */}
-      <section className="py-20">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -108,15 +108,15 @@ const PHBM70Product = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+              <div className="inline-flex items-center gap-3 bg-blue-50 px-4 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
                 <FaTint className="text-blue-600 text-sm" />
-                <span className="text-slate-700 font-semibold text-xs uppercase tracking-wider">Product Overview</span>
+                <span className="text-blue-700 font-semibold text-xs uppercase tracking-wider">Product Overview</span>
               </div>
-              <h2 className="text-4xl font-bold text-slate-800 mb-4">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
                 Standardised & <br />
                 <span className="text-blue-600">Pasteurised Human Milk</span>
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mb-6"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mb-6"></div>
               <p className="text-gray-600 leading-relaxed mb-4">
                 NeoLacta PHBM 70 is a 100% human milk-derived product, standardised and pasteurised to provide 
                 optimal nutrition for premature and at-risk infants who do not have access to their mother's milk.
@@ -126,9 +126,15 @@ const PHBM70Product = () => {
                 natural breast milk, ensuring the best possible outcomes for NICU babies.
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100">ISO 22000:2018</span>
-                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100">GMP Certified</span>
-                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100">Ready to Feed</span>
+                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100 hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer">
+                  ISO 22000:2018
+                </span>
+                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100 hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer">
+                  GMP Certified
+                </span>
+                <span className="text-xs bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-100 hover:bg-blue-600 hover:text-white transition-all duration-300 cursor-pointer">
+                  Ready to Feed
+                </span>
               </div>
             </motion.div>
 
@@ -139,21 +145,21 @@ const PHBM70Product = () => {
               viewport={{ once: true }}
               className="relative"
             >
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
                 <img 
                   src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                   alt="NeoLacta PHBM 70 Product"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] border border-gray-100">
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] border border-blue-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center shadow-md">
                     <FaCertificate className="text-white text-xl" />
                   </div>
                   <div>
-                    <p className="font-bold text-slate-800 text-sm">Premium Quality</p>
-                    <p className="text-xs text-gray-500">ISO Certified</p>
+                    <p className="font-bold text-gray-800 text-sm">Premium Quality</p>
+                    <p className="text-xs text-blue-600">ISO Certified</p>
                   </div>
                 </div>
               </div>
@@ -163,7 +169,7 @@ const PHBM70Product = () => {
       </section>
 
       {/* Special Instructions - Left Image, Right Text */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -173,21 +179,21 @@ const PHBM70Product = () => {
               viewport={{ once: true }}
               className="relative order-2 md:order-1"
             >
-              <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 group">
                 <img 
                   src="https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
                   alt="Product Instructions"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] border border-gray-100">
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-4 max-w-[200px] border border-blue-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-slate-600 to-slate-500 rounded-full flex items-center justify-center shadow-md">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center shadow-md">
                     <FaClock className="text-white text-xl" />
                   </div>
                   <div>
-                    <p className="font-bold text-slate-800 text-sm">Ready to Use</p>
-                    <p className="text-xs text-gray-500">No mixing required</p>
+                    <p className="font-bold text-gray-800 text-sm">Ready to Use</p>
+                    <p className="text-xs text-blue-600">No mixing required</p>
                   </div>
                 </div>
               </div>
@@ -200,14 +206,14 @@ const PHBM70Product = () => {
               viewport={{ once: true }}
               className="order-1 md:order-2"
             >
-              <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+              <div className="inline-flex items-center gap-3 bg-white px-4 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
                 <FaMicroscope className="text-blue-600 text-sm" />
-                <span className="text-slate-700 font-semibold text-xs uppercase tracking-wider">Special Instructions</span>
+                <span className="text-blue-700 font-semibold text-xs uppercase tracking-wider">Special Instructions</span>
               </div>
-              <h2 className="text-4xl font-bold text-slate-800 mb-4">
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">
                 Usage & <span className="text-blue-600">Storage Guidelines</span>
               </h2>
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mb-6"></div>
+              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mb-6"></div>
               
               <div className="space-y-4">
                 <div className="flex items-start gap-3 group">
@@ -215,37 +221,37 @@ const PHBM70Product = () => {
                     <FaTemperatureHigh className="text-white text-sm" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Storage Temperature</h3>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">Storage Temperature</h3>
                     <p className="text-gray-500 text-sm">Store at -20°C to -80°C. Do not refreeze after thawing.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3 group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-slate-600 to-slate-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-400 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
                     <FaFlask className="text-white text-sm" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Thawing Instructions</h3>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">Thawing Instructions</h3>
                     <p className="text-gray-500 text-sm">Thaw in refrigerator (2-8°C) for 12-24 hours. Use within 24 hours of thawing.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3 group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-400 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
                     <FaClock className="text-white text-sm" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Warming Instructions</h3>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">Warming Instructions</h3>
                     <p className="text-gray-500 text-sm">Warm to body temperature (37°C) using a bottle warmer or warm water bath. Do not microwave.</p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-3 group">
-                  <div className="w-8 h-8 bg-gradient-to-br from-slate-500 to-slate-400 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-400 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform shadow-sm">
                     <FaShieldAlt className="text-white text-sm" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-slate-800">Single Use Only</h3>
+                    <h3 className="font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">Single Use Only</h3>
                     <p className="text-gray-500 text-sm">Discard any unused portion after feeding. Do not reuse.</p>
                   </div>
                 </div>
@@ -265,14 +271,14 @@ const PHBM70Product = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaCheckCircle className="text-blue-600 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Key Benefits</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Key Benefits</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
               Why Choose <span className="text-blue-600">NeoLacta PHBM 70?</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
             <p className="text-gray-500 max-w-2xl mx-auto mt-6">
               Clinically proven benefits that make a difference in premature infant care
             </p>
@@ -286,12 +292,12 @@ const PHBM70Product = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                className="group bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md`}>
                   <div className="text-white text-2xl">{benefit.icon}</div>
                 </div>
-                <h3 className="text-lg font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed group-hover:text-gray-600 transition-colors">
@@ -304,7 +310,7 @@ const PHBM70Product = () => {
       </section>
 
       {/* Features & Specifications Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Features List */}
@@ -314,7 +320,7 @@ const PHBM70Product = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">Key Features</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Key Features</h3>
               <div className="space-y-3">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center gap-3 group">
@@ -334,15 +340,15 @@ const PHBM70Product = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">Product Specifications</h3>
-              <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">Product Specifications</h3>
+              <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-blue-100">
                 {specifications.map((spec, index) => (
                   <div 
                     key={index}
-                    className={`flex py-3 px-4 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+                    className={`flex py-3 px-4 transition-colors duration-300 ${index % 2 === 0 ? 'bg-white hover:bg-blue-50' : 'bg-gray-50 hover:bg-blue-50'}`}
                   >
-                    <div className="w-2/5 font-semibold text-slate-700">{spec.label}</div>
-                    <div className="w-3/5 text-gray-500">{spec.value}</div>
+                    <div className="w-2/5 font-semibold text-gray-700">{spec.label}</div>
+                    <div className="w-3/5 text-gray-600">{spec.value}</div>
                   </div>
                 ))}
               </div>
@@ -359,24 +365,24 @@ const PHBM70Product = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-8 md:p-10 text-center text-white shadow-xl"
+            className="bg-gradient-to-r from-blue-700 to-blue-600 rounded-3xl p-8 md:p-10 text-center text-white shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <FaQuoteLeft className="text-blue-300 text-4xl mx-auto mb-4 opacity-60" />
+            <FaQuoteLeft className="text-blue-200 text-4xl mx-auto mb-4 opacity-60" />
             <p className="text-xl md:text-2xl font-medium max-w-2xl mx-auto leading-relaxed">
               "NeoLacta PHBM 70 provides standardized, safe, and nutritionally complete human milk that 
               supports optimal growth and development in premature infants."
             </p>
             <div className="mt-6 flex items-center justify-center gap-2">
-              <div className="w-12 h-0.5 bg-blue-300"></div>
-              <span className="text-blue-300 font-semibold">Clinical Evidence</span>
-              <div className="w-12 h-0.5 bg-blue-300"></div>
+              <div className="w-12 h-0.5 bg-blue-200"></div>
+              <span className="text-blue-200 font-semibold">Clinical Evidence</span>
+              <div className="w-12 h-0.5 bg-blue-200"></div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -384,17 +390,18 @@ const PHBM70Product = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              Ready to Order NeoLacta PHBM 70?
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Ready to Order <span className="text-blue-600">NeoLacta PHBM 70?</span>
             </h2>
-            <p className="text-gray-500 mb-8 leading-relaxed">
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 mb-8 leading-relaxed">
               Contact us today to place an order or request more information about our products.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-slate-700 to-slate-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:shadow-blue-200/50 hover:-translate-y-1 transition-all duration-300">
                 Enquire Now
               </button>
-              <button className="border-2 border-slate-600 text-slate-600 px-8 py-3 rounded-full font-semibold hover:bg-slate-600 hover:text-white transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1">
                 Request a Sample
               </button>
             </div>
