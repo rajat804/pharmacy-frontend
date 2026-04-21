@@ -105,7 +105,7 @@ const Conferences = () => {
       title: "South Asian Neonatal Forum 2023",
       date: "September 5-7, 2023",
       location: "Chennai, Tamil Nadu",
-      contribution: "Launch of  MMF Plus clinical data",
+      contribution: "Launch of MMF Plus clinical data",
       highlights: ["Clinical Trial Results", "Panel on Fortification Strategies", "Workshop on Human Milk Banking"],
       year: 2023
     },
@@ -122,16 +122,16 @@ const Conferences = () => {
 
   const stats = [
     { value: "15+", label: "Conferences Attended", icon: <FaGlobeAsia />, color: "from-blue-600 to-blue-500" },
-    { value: "50+", label: "Research Presentations", icon: <FaMicrophone />, color: "from-pink-500 to-pink-400" },
-    { value: "100+", label: "Expert Speakers Met", icon: <FaUserTie />, color: "from-green-600 to-green-500" },
-    { value: "25+", label: "Partner Institutions", icon: <FaUsers />, color: "from-purple-600 to-purple-500" }
+    { value: "50+", label: "Research Presentations", icon: <FaMicrophone />, color: "from-blue-500 to-blue-400" },
+    { value: "100+", label: "Expert Speakers Met", icon: <FaUserTie />, color: "from-blue-600 to-blue-500" },
+    { value: "25+", label: "Partner Institutions", icon: <FaUsers />, color: "from-blue-500 to-blue-400" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/10 to-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
@@ -139,7 +139,7 @@ const Conferences = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -148,11 +148,11 @@ const Conferences = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
+            <span className="text-blue-200 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
               Events & Gatherings
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4">
-              Conferences & <span className="text-blue-300">Events</span>
+              Conferences & <span className="text-blue-200">Events</span>
             </h1>
             <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               Explore the leading conferences and events dedicated to advancing neonatal care and nutrition. 
@@ -160,7 +160,7 @@ const Conferences = () => {
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Statistics Section */}
@@ -179,7 +179,7 @@ const Conferences = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-md`}>
                   <div className="text-white text-2xl">{stat.icon}</div>
                 </div>
-                <div className="text-3xl font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
                 <p className="text-gray-500 text-sm">{stat.label}</p>
               </motion.div>
             ))}
@@ -188,7 +188,7 @@ const Conferences = () => {
       </section>
 
       {/* Coming Soon Banner */}
-      <section className="py-12 bg-gradient-to-r from-amber-50 to-orange-50">
+      <section className="py-12 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -196,9 +196,9 @@ const Conferences = () => {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-3 bg-amber-100 px-6 py-3 rounded-full mb-4">
-              <FaBell className="text-amber-600 text-xl animate-pulse" />
-              <span className="text-amber-800 font-semibold">New Conference Announcements Coming Soon!</span>
+            <div className="inline-flex items-center gap-3 bg-blue-100 px-6 py-3 rounded-full mb-4">
+              <FaBell className="text-blue-600 text-xl animate-pulse" />
+              <span className="text-blue-800 font-semibold">New Conference Announcements Coming Soon!</span>
             </div>
             <p className="text-gray-600">
               We're constantly updating our conference calendar. Subscribe to get notified about upcoming events.
@@ -250,7 +250,7 @@ const Conferences = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
                   >
                     <div className="bg-gradient-to-r from-blue-600 to-blue-500 p-4 text-white">
                       <div className="flex justify-between items-start">
@@ -281,20 +281,20 @@ const Conferences = () => {
                         <p className="text-xs text-gray-500 font-semibold mb-2">Key Speakers:</p>
                         <div className="flex flex-wrap gap-1">
                           {conf.speakers.map((speaker, idx) => (
-                            <span key={idx} className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full">
+                            <span key={idx} className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded-full group-hover:bg-blue-100 transition-colors">
                               {speaker}
                             </span>
                           ))}
                         </div>
                       </div>
                       
-                      <div className="bg-amber-50 rounded-xl p-3 mb-4">
-                        <p className="text-xs text-amber-700">
+                      <div className="bg-blue-50 rounded-xl p-3 mb-4">
+                        <p className="text-xs text-blue-700">
                           <FaClock className="inline mr-1" /> Registration Deadline: {conf.registrationDeadline}
                         </p>
                       </div>
                       
-                      <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white py-2 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-0.5 transition-all duration-300">
                         Register Now →
                       </button>
                     </div>
@@ -319,18 +319,18 @@ const Conferences = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                    className="group bg-white rounded-2xl p-6 shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
                   >
                     <div className="flex justify-between items-start mb-4">
                       <div>
-                        <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
                           {conf.year}
                         </span>
                       </div>
                       <FaCheckCircle className="text-green-500 text-xl" />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
                       {conf.title}
                     </h3>
                     
@@ -351,7 +351,7 @@ const Conferences = () => {
                       <p className="text-xs text-gray-500 font-semibold mb-2">Event Highlights:</p>
                       <div className="flex flex-wrap gap-2">
                         {conf.highlights.map((highlight, idx) => (
-                          <span key={idx} className="text-xs bg-green-50 text-green-600 px-2 py-1 rounded-full">
+                          <span key={idx} className="text-xs bg-green-50 text-green-600 px-2 py-1 rounded-full group-hover:bg-green-100 transition-colors">
                             ✓ {highlight}
                           </span>
                         ))}
@@ -366,7 +366,7 @@ const Conferences = () => {
       </section>
 
       {/* Our Contributions Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -375,14 +375,14 @@ const Conferences = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaMicrophone className="text-blue-600 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Our Contributions</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Our Contributions</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
-               <span className="text-blue-600">Global Presence</span>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              <span className="text-blue-600">Global Presence</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
             <p className="text-gray-500 max-w-2xl mx-auto mt-4">
               We actively participate in leading conferences worldwide, sharing research and insights on human milk nutrition
             </p>
@@ -394,12 +394,12 @@ const Conferences = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 border border-gray-100 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaBookOpen className="text-white text-2xl" />
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Research Presentations</h3>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Research Presentations</h3>
               <p className="text-2xl font-bold text-blue-600">25+</p>
               <p className="text-xs text-gray-500">Scientific Papers Presented</p>
             </motion.div>
@@ -409,13 +409,13 @@ const Conferences = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 border border-gray-100 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-pink-400 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaUsers className="text-white text-2xl" />
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Expert Panels</h3>
-              <p className="text-2xl font-bold text-pink-600">15+</p>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Expert Panels</h3>
+              <p className="text-2xl font-bold text-blue-600">15+</p>
               <p className="text-xs text-gray-500">Panel Discussions Moderated</p>
             </motion.div>
 
@@ -424,13 +424,13 @@ const Conferences = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+              className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 border border-gray-100 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaChalkboardTeacher className="text-white text-2xl" />
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Workshops</h3>
-              <p className="text-2xl font-bold text-green-600">10+</p>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Workshops</h3>
+              <p className="text-2xl font-bold text-blue-600">10+</p>
               <p className="text-xs text-gray-500">Educational Workshops Conducted</p>
             </motion.div>
           </div>
@@ -445,9 +445,9 @@ const Conferences = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-8 md:p-10 text-white text-center shadow-xl"
+            className="bg-gradient-to-r from-blue-700 to-blue-600 rounded-3xl p-8 md:p-10 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <FaBell className="text-blue-300 text-5xl mx-auto mb-4 animate-pulse" />
+            <FaBell className="text-blue-200 text-5xl mx-auto mb-4 animate-pulse" />
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Get Notified About Upcoming Events</h2>
             <p className="text-white/80 mb-6">
               Subscribe to our conference newsletter to receive updates about upcoming conferences, 
@@ -470,9 +470,9 @@ const Conferences = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="flex-1 px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
                 />
-                <button type="submit" className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg">
+                <button type="submit" className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                   Subscribe Now
                 </button>
               </form>
@@ -483,7 +483,7 @@ const Conferences = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -491,16 +491,17 @@ const Conferences = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">Interested in Partnering?</h2>
-            <p className="text-gray-500 mb-6">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Interested in Partnering?</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-4 rounded-full"></div>
+            <p className="text-gray-600 mb-6">
               If you're organizing a conference and would like NeoLacta to participate as a speaker, 
               sponsor, or exhibitor, please reach out to us.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-blue-200/50 hover:-translate-y-1">
                 Contact Conference Team
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1">
                 Download Conference Brochure
               </button>
             </div>
