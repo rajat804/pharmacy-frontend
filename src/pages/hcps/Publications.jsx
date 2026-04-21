@@ -37,25 +37,25 @@ const Publications = () => {
   const [activeCategory, setActiveCategory] = useState('all');
 
   const categories = [
-    { id: 'all', name: 'All Publications', icon: <FaBookOpen />, count: 21 },
-    { id: 'neolacta', name: 'Publications on NeoLacta’s Products', icon: <FaFlask />, count: 4 },
+    { id: 'all', name: 'All Publications', icon: <FaBookOpen />, count: 23 },
+    { id: 'neolacta', name: 'Publications on Products', icon: <FaFlask />, count: 4 },
     { id: 'benefits', name: 'Benefits of Human Milk', icon: <FaHeart />, count: 4 },
     { id: 'diet', name: '100% Human Milk Diet vs Formula', icon: <FaBaby />, count: 3 },
     { id: 'fortification', name: 'Fortification', icon: <FaTint />, count: 3 },
     { id: 'cost', name: 'Cost-Benefit', icon: <FaDollarSign />, count: 2 },
-    { id: 'complications', name: '100% Human Milk Diet reduces the risk of Complications of Prematurity', icon: <FaShieldAlt />, count: 3 },
-    { id: 'immunity', name: 'Reduced Infections & Improved Immunity from 100% Human Milk Diet', icon: <FaMicroscope />, count: 2 },
+    { id: 'complications', name: '100% Human Milk Diet reduces risk of Complications', icon: <FaShieldAlt />, count: 3 },
+    { id: 'immunity', name: 'Reduced Infections & Improved Immunity', icon: <FaMicroscope />, count: 2 },
     { id: 'policies', name: 'Policies & Human Milk Banking', icon: <FaClipboardList />, count: 2 }
   ];
 
   const publications = [
-    // Publications on  Products
+    // Publications on Products
     {
       id: 1,
-      title: "Clinical Efficacy of  100% Human Milk-Based Products in Preterm Infants",
+      title: "Clinical Efficacy of 100% Human Milk-Based Products in Preterm Infants",
       authors: "Kotha R, Mehta S, Sharma P",
       journal: "J. Pediatr. Neonatal Individ. Med. 2022;11(1)",
-      description: "Evaluation of  human milk-derived products showing improved growth outcomes and reduced NICU stay.",
+      description: "Evaluation of human milk-derived products showing improved growth outcomes and reduced NICU stay.",
       category: "neolacta",
       year: 2022,
       type: "Clinical Study",
@@ -66,7 +66,7 @@ const Publications = () => {
     },
     {
       id: 2,
-      title: "Safety and Tolerability of  Human Milk Fortifier in Very Low Birth Weight Infants",
+      title: "Safety and Tolerability of Human Milk Fortifier in Very Low Birth Weight Infants",
       authors: "Bharadwaj N, Kumar R, Gupta A",
       journal: "Indian J Pediatr. 2022;89(11):1131-1133",
       description: "Demonstrated excellent tolerance and safety profile of NeoLacta MMF in preterm infants.",
@@ -83,7 +83,7 @@ const Publications = () => {
       title: "NeoLacta PHBM 70: Standardized Human Milk for Optimal Preterm Nutrition",
       authors: "Senthilkumaran R, et al.",
       journal: "J. Trop. Pediatr. 2023;69(1)",
-      description: "Study on the nutritional adequacy and growth outcomes with  pasteurized human milk.",
+      description: "Study on the nutritional adequacy and growth outcomes with pasteurized human milk.",
       category: "neolacta",
       year: 2023,
       type: "Research Article",
@@ -94,7 +94,7 @@ const Publications = () => {
     },
     {
       id: 4,
-      title: " Lyophilized Human Milk Powder: A Breakthrough in Neonatal Nutrition",
+      title: "Lyophilized Human Milk Powder: A Breakthrough in Neonatal Nutrition",
       authors: "Wazir S, et al.",
       journal: "J. Contemp. Pediatr. 2021;8:445-50",
       description: "Evaluation of shelf-stable human milk powder for NICU and post-discharge use.",
@@ -396,13 +396,11 @@ const Publications = () => {
     return matchesSearch && matchesCategory;
   });
 
-
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/10 to-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
@@ -410,7 +408,7 @@ const Publications = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -419,11 +417,11 @@ const Publications = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
+            <span className="text-blue-200 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
               Research & Evidence
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4">
-              Publications on <span className="text-blue-300"> Products</span>
+              Publications on <span className="text-blue-200">Products</span>
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
               Explore our comprehensive collection of research publications, clinical studies, 
@@ -431,11 +429,11 @@ const Publications = () => {
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Search Bar */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="py-8 bg-white border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="relative w-full max-w-md group">
@@ -452,8 +450,8 @@ const Publications = () => {
         </div>
       </section>
 
-      {/* Categories Section - Exactly as requested */}
-      <section className="py-12 bg-gradient-to-b from-gray-50 to-white">
+      {/* Categories Section */}
+      <section className="py-12 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.filter(c => c.id !== 'all').map((category) => (
@@ -465,7 +463,7 @@ const Publications = () => {
                 className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 text-left ${
                   activeCategory === category.id
                     ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
                 }`}
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
@@ -476,7 +474,7 @@ const Publications = () => {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className={`font-semibold text-sm ${activeCategory === category.id ? 'text-white' : 'text-slate-800'}`}>
+                  <h3 className={`font-semibold text-sm ${activeCategory === category.id ? 'text-white' : 'text-gray-800'}`}>
                     {category.name}
                   </h3>
                   <p className={`text-xs ${activeCategory === category.id ? 'text-white/70' : 'text-gray-400'}`}>
@@ -502,7 +500,7 @@ const Publications = () => {
             {activeCategory !== 'all' && (
               <button
                 onClick={() => setActiveCategory('all')}
-                className="text-blue-600 text-sm hover:underline flex items-center gap-1"
+                className="text-blue-600 text-sm hover:underline flex items-center gap-1 hover:gap-2 transition-all duration-300"
               >
                 Clear filter <FaArrowRight className="text-xs" />
               </button>
@@ -530,11 +528,11 @@ const Publications = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.05 }}
-                    className="group bg-white rounded-2xl p-5 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                    className="group bg-white rounded-2xl p-5 shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-2">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-xl flex items-center justify-center">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform">
                           <FaFileAlt className="text-white text-lg" />
                         </div>
                         <div>
@@ -546,7 +544,7 @@ const Publications = () => {
                       </div>
                     </div>
                     
-                    <h3 className="font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm">
+                    <h3 className="font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm">
                       {pub.title}
                     </h3>
                     
@@ -554,7 +552,7 @@ const Publications = () => {
                       {pub.authors}
                     </p>
                     
-                    <p className="text-gray-500 text-xs mb-3 line-clamp-2">
+                    <p className="text-gray-500 text-xs mb-3 line-clamp-2 group-hover:text-gray-600 transition-colors">
                       {pub.description}
                     </p>
                     
@@ -572,15 +570,15 @@ const Publications = () => {
                       </div>
                       <a 
                         href={pub.pdfUrl}
-                        className="text-blue-600 text-xs font-medium hover:gap-1 transition-all flex items-center gap-0"
+                        className="text-blue-600 text-xs font-medium hover:gap-2 transition-all flex items-center gap-1 hover:text-blue-700"
                       >
-                        Download PDF <FaDownload className="text-xs ml-1" />
+                        Download PDF <FaDownload className="text-xs" />
                       </a>
                     </div>
                     
                     {pub.keyFinding && (
                       <div className="mt-3 pt-2 border-t border-gray-50">
-                        <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                        <span className="text-xs text-blue-700 bg-blue-50 px-2 py-1 rounded-full group-hover:bg-blue-100 transition-colors">
                           Key Finding: {pub.keyFinding}
                         </span>
                       </div>
@@ -600,16 +598,16 @@ const Publications = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-slate-800 to-slate-700 rounded-3xl p-8 text-white text-center shadow-xl"
+            className="bg-gradient-to-r from-blue-700 to-blue-600 rounded-3xl p-8 text-white text-center shadow-xl hover:shadow-2xl transition-all duration-300"
           >
-            <FaNewspaper className="text-blue-300 text-4xl mx-auto mb-4" />
+            <FaNewspaper className="text-blue-200 text-4xl mx-auto mb-4" />
             <h2 className="text-2xl md:text-3xl font-bold mb-3">Stay Updated with Latest Research</h2>
             <p className="text-white/80 mb-6">
               Subscribe to our quarterly newsletter for the latest publications, research updates, and clinical insights.
@@ -618,9 +616,9 @@ const Publications = () => {
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                className="flex-1 px-5 py-3 rounded-full text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
               />
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg">
+              <button className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 Subscribe
               </button>
             </div>
