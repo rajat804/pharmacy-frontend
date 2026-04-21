@@ -29,13 +29,13 @@ const Footer = () => {
         { name: "Mission & Vision", path: "/about/mission-vision" },
         { name: "Quality & Safety", path: "/about/quality-safety" },
         { name: "Awards & Recognition", path: "/about/awards" },
-        { name: "Careers", path: "/support/careers" }
+        { name: "Careers", path: "/career" }
       ]
     },
     products: {
       title: "Products",
       links: [
-        { name: "PHBM 70", path: "/products/pasteurised" },
+        { name: "PHBM 70", path: "/products/phbm70" },
         { name: "Neolact N70", path: "/products/n70" },
         { name: "Neolact N70 Prime", path: "/products/n70-prime" },
         { name: "Neolact MMF", path: "/products/mmf" },
@@ -57,7 +57,7 @@ const Footer = () => {
     support: {
       title: "Support",
       links: [
-        { name: "Contact Us", path: "/support/contact" },
+        { name: "Contact Us", path: "/contact" },
         { name: "Customer Support", path: "/support/customer" },
         { name: "Request Information", path: "/support/request" },
         { name: "Become a Donor", path: "/donor/become-donor" },
@@ -83,23 +83,23 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#0a1628] text-white">
+    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
         
         {/* Top Section with Logo and Social */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 pb-8 border-b border-white/10">
-          {/* Logo Section - Removed "neolacta" text */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 pb-8 border-b border-blue-400/20">
+          {/* Logo Section */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#1e3a5f] to-[#0f2440] rounded-2xl flex items-center justify-center shadow-lg">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
                 <span className="text-white text-3xl font-bold">N</span>
               </div>
               <div>
-                <p className="text-[11px] text-[#7ab3c8] -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
+                <p className="text-[11px] text-blue-200 -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
               </div>
             </div>
-            <p className="text-sm text-white/70 max-w-xs">
+            <p className="text-sm text-blue-100 max-w-xs leading-relaxed">
               India's only ISO 22000:2018 and GMP-certified human milk facility dedicated to supporting optimal nutrition for premature babies.
             </p>
           </div>
@@ -107,12 +107,12 @@ const Footer = () => {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {quickStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl text-[#7ab3c8] mb-2 flex justify-center">
+              <div key={index} className="text-center group">
+                <div className="text-3xl text-blue-300 mb-2 flex justify-center group-hover:text-blue-200 transition-colors duration-300 group-hover:scale-110 transform">
                   {stat.icon}
                 </div>
-                <div className="text-xl font-bold text-white">{stat.value}</div>
-                <div className="text-xs text-white/60">{stat.label}</div>
+                <div className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors">{stat.value}</div>
+                <div className="text-xs text-blue-200/70 group-hover:text-blue-100 transition-colors">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -122,9 +122,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {Object.values(footerLinks).map((section, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8] relative inline-block">
+              <h3 className="text-lg font-semibold mb-4 text-blue-200 relative inline-block">
                 {section.title}
-                <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-[#1e3a5f] to-transparent rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full"></div>
               </h3>
               <ul className="space-y-2">
                 {section.links.map((link, linkIdx) => (
@@ -132,12 +132,12 @@ const Footer = () => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `text-sm text-white/70 hover:text-[#7ab3c8] transition-colors duration-300 flex items-center gap-1 group ${
-                          isActive ? 'text-[#7ab3c8]' : ''
+                        `text-sm text-blue-100 hover:text-white transition-all duration-300 flex items-center gap-1 group ${
+                          isActive ? 'text-white font-medium' : ''
                         }`
                       }
                     >
-                      <FaArrowRight className="text-[10px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1" />
+                      <FaArrowRight className="text-[10px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 text-blue-300" />
                       <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                     </NavLink>
                   </li>
@@ -148,35 +148,43 @@ const Footer = () => {
         </div>
 
         {/* Contact & Newsletter Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 pt-4 border-t border-white/10">
+        <div className="grid md:grid-cols-2 gap-8 mb-12 pt-4 border-t border-blue-400/20">
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8]">Get in Touch</h3>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaPhone className="text-[#1e3a5f] mt-0.5" />
+            <h3 className="text-lg font-semibold mb-4 text-blue-200">Get in Touch</h3>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 text-sm text-blue-100 group">
+                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaPhone className="text-blue-200" />
+                </div>
                 <div>
                   <p className="font-semibold text-white">Toll Free Helpline</p>
-                  <p className="hover:text-[#7ab3c8] transition-colors">1800 - 419 - 2199</p>
+                  <p className="hover:text-blue-200 transition-colors cursor-pointer">1800 - 419 - 2199</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaEnvelope className="text-[#1e3a5f] mt-0.5" />
+              <div className="flex items-start gap-3 text-sm text-blue-100 group">
+                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaEnvelope className="text-blue-200" />
+                </div>
                 <div>
                   <p className="font-semibold text-white">Email Us</p>
-                  <p className="hover:text-[#7ab3c8] transition-colors">customersupport@neoverse.in</p>
+                  <p className="hover:text-blue-200 transition-colors cursor-pointer">customersupport@neoverse.in</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaMapMarkerAlt className="text-[#1e3a5f] mt-0.5" />
+              <div className="flex items-start gap-3 text-sm text-blue-100 group">
+                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaMapMarkerAlt className="text-blue-200" />
+                </div>
                 <div>
                   <p className="font-semibold text-white">Corporate Office</p>
                   <p>NeoLacta Lifesciences Pvt. Ltd.</p>
                   <p>Bangalore, Karnataka, India</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-white/70">
-                <FaClock className="text-[#1e3a5f] mt-0.5" />
+              <div className="flex items-start gap-3 text-sm text-blue-100 group">
+                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaClock className="text-blue-200" />
+                </div>
                 <div>
                   <p className="font-semibold text-white">Support Hours</p>
                   <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
@@ -188,27 +196,27 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-[#7ab3c8]">Stay Updated</h3>
-            <p className="text-sm text-white/70 mb-4">
+            <h3 className="text-lg font-semibold mb-4 text-blue-200">Stay Updated</h3>
+            <p className="text-sm text-blue-100 mb-4">
               Subscribe to our newsletter for latest updates, clinical insights, and parenting tips.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 mb-4">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-[#1e3a5f] focus:ring-2 focus:ring-[#1e3a5f]/20 transition-all"
+                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-blue-400/30 text-white placeholder-blue-200/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
               />
-              <button className="bg-gradient-to-r from-[#1e3a5f] to-[#0f2440] px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+              <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 hover:scale-105">
                 Subscribe
               </button>
             </form>
-            <p className="text-xs text-white/40">
+            <p className="text-xs text-blue-200/50">
               No spam, unsubscribe anytime. We respect your privacy.
             </p>
             
             {/* Social Links */}
             <div className="mt-6">
-              <p className="text-sm text-white/70 mb-3">Follow Us</p>
+              <p className="text-sm text-blue-100 mb-3">Follow Us</p>
               <div className="flex gap-3">
                 {socialLinks.map((social, idx) => (
                   <a
@@ -217,7 +225,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-10 h-10 bg-white/10 hover:bg-[#1e3a5f] rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                    className="w-10 h-10 bg-white/10 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 text-blue-200 hover:text-white"
                   >
                     {social.icon}
                   </a>
@@ -228,28 +236,28 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
+        <div className="pt-8 border-t border-blue-400/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <div className="text-white/50 text-center md:text-left">
+            <div className="text-blue-200/60 text-center md:text-left hover:text-blue-100 transition-colors">
               © {currentYear} NeoLacta Lifesciences. All rights reserved.
             </div>
             <div className="flex flex-wrap justify-center gap-6">
-              <NavLink to="/privacy-policy" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
+              <NavLink to="/privacy-policy" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
                 Privacy Policy
               </NavLink>
-              <NavLink to="/terms-of-use" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
+              <NavLink to="/terms-of-use" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
                 Terms of Use
               </NavLink>
-              <NavLink to="/cookie-policy" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
+              <NavLink to="/cookie-policy" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
                 Cookie Policy
               </NavLink>
-              <NavLink to="/sitemap" className="text-white/50 hover:text-[#7ab3c8] transition-colors text-xs">
+              <NavLink to="/sitemap" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
                 Sitemap
               </NavLink>
             </div>
           </div>
-          <div className="text-center mt-4 text-white/30 text-xs">
-            <p>💙 Dedicated to nurturing premature lives with 100% human milk</p>
+          <div className="text-center mt-4 text-blue-200/40 text-xs">
+            <p className="hover:text-blue-200/60 transition-colors">💙 Dedicated to nurturing premature lives with 100% human milk</p>
           </div>
         </div>
       </div>
