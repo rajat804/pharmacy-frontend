@@ -146,16 +146,16 @@ const CaseStudies = () => {
 
   const stats = [
     { value: "7+", label: "Case Studies", icon: <FaClipboardList />, color: "from-blue-600 to-blue-500" },
-    { value: "6+", label: "Expert Neonatologists", icon: <FaUserMd />, color: "from-pink-500 to-pink-400" },
-    { value: "100%", label: "Success Rate", icon: <FaChartLine />, color: "from-green-600 to-green-500" },
-    { value: "50+", label: "Babies Impacted", icon: <FaBaby />, color: "from-purple-600 to-purple-500" }
+    { value: "6+", label: "Expert Neonatologists", icon: <FaUserMd />, color: "from-blue-500 to-blue-400" },
+    { value: "100%", label: "Success Rate", icon: <FaChartLine />, color: "from-blue-600 to-blue-500" },
+    { value: "50+", label: "Babies Impacted", icon: <FaBaby />, color: "from-blue-500 to-blue-400" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/10 to-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 text-white py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
@@ -163,7 +163,7 @@ const CaseStudies = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -172,22 +172,22 @@ const CaseStudies = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
+            <span className="text-blue-200 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
               Clinical Evidence
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4">
-              Unveiling Success: <span className="text-blue-300">Neolacta Product Case Studies</span>
+              Unveiling Success: <span className="text-blue-200">Neolacta Product Case Studies</span>
             </h1>
             <h2 className="text-xl md:text-2xl font-semibold mb-6 text-blue-200">
               Real Solutions, Real Impact – Explore In-Depth Case Studies
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Discover how  100% human milk products have transformed outcomes for premature 
+              Discover how 100% human milk products have transformed outcomes for premature 
               and critically ill babies across India.
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Statistics Section */}
@@ -206,7 +206,7 @@ const CaseStudies = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-md`}>
                   <div className="text-white text-2xl">{stat.icon}</div>
                 </div>
-                <div className="text-3xl font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
                 <p className="text-gray-500 text-sm">{stat.label}</p>
               </motion.div>
             ))}
@@ -215,7 +215,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Search Bar */}
-      <section className="py-8 bg-white border-b border-gray-100">
+      <section className="py-8 bg-white border-b border-blue-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-center">
             <div className="relative w-full max-w-md group">
@@ -233,7 +233,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-12 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {categories.map((category) => (
@@ -245,7 +245,7 @@ const CaseStudies = () => {
                 className={`flex items-center gap-3 p-4 rounded-xl transition-all duration-300 ${
                   activeCategory === category.id
                     ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200'
+                    : 'bg-white text-gray-700 hover:bg-blue-50 border border-gray-200'
                 }`}
               >
                 <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
@@ -256,7 +256,7 @@ const CaseStudies = () => {
                   </div>
                 </div>
                 <div className="flex-1 text-left">
-                  <h3 className={`font-semibold text-sm ${activeCategory === category.id ? 'text-white' : 'text-slate-800'}`}>
+                  <h3 className={`font-semibold text-sm ${activeCategory === category.id ? 'text-white' : 'text-gray-800'}`}>
                     {category.name}
                   </h3>
                   <p className={`text-xs ${activeCategory === category.id ? 'text-white/70' : 'text-gray-400'}`}>
@@ -282,7 +282,7 @@ const CaseStudies = () => {
             {activeCategory !== 'all' && (
               <button
                 onClick={() => setActiveCategory('all')}
-                className="text-blue-600 text-sm hover:underline flex items-center gap-1"
+                className="text-blue-600 text-sm hover:underline flex items-center gap-1 hover:gap-2 transition-all duration-300"
               >
                 Clear filter <FaArrowRight className="text-xs" />
               </button>
@@ -310,7 +310,7 @@ const CaseStudies = () => {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                    className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
                   >
                     {/* Image */}
                     <div className="relative h-48 overflow-hidden">
@@ -321,7 +321,7 @@ const CaseStudies = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                       <div className="absolute top-4 right-4">
-                        <span className="bg-blue-600 text-white text-xs px-2 py-1 rounded-full">
+                        <span className="bg-gradient-to-r from-blue-600 to-blue-500 text-white text-xs px-2 py-1 rounded-full shadow-md">
                           {cs.product}
                         </span>
                       </div>
@@ -336,11 +336,11 @@ const CaseStudies = () => {
                     {/* Content */}
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-3">
-                        <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-500 rounded-full flex items-center justify-center shadow-md">
                           <FaUserMd className="text-white text-sm" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-slate-800 text-sm line-clamp-1">
+                          <h3 className="font-semibold text-gray-800 text-sm line-clamp-1">
                             {cs.authors.split(',')[0]}
                           </h3>
                           <p className="text-xs text-gray-400 flex items-center gap-1">
@@ -349,17 +349,17 @@ const CaseStudies = () => {
                         </div>
                       </div>
                       
-                      <h4 className="font-bold text-slate-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm">
+                      <h4 className="font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors text-sm">
                         {cs.title}
                       </h4>
                       
-                      <p className="text-gray-500 text-xs mb-3 line-clamp-2">
+                      <p className="text-gray-500 text-xs mb-3 line-clamp-2 group-hover:text-gray-600 transition-colors">
                         {cs.description}
                       </p>
                       
                       <div className="flex flex-wrap gap-1 mb-3">
                         {cs.keyOutcomes.map((outcome, idx) => (
-                          <span key={idx} className="text-xs bg-green-50 text-green-600 px-2 py-0.5 rounded-full">
+                          <span key={idx} className="text-xs bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full group-hover:bg-blue-100 transition-colors">
                             ✓ {outcome}
                           </span>
                         ))}
@@ -372,9 +372,9 @@ const CaseStudies = () => {
                         </div>
                         <a 
                           href={cs.pdfUrl}
-                          className="text-blue-600 text-sm font-medium hover:gap-1 transition-all flex items-center gap-0"
+                          className="text-blue-600 text-sm font-medium hover:gap-2 transition-all flex items-center gap-1 hover:text-blue-700"
                         >
-                          View Case Study <FaArrowRight className="text-xs ml-1" />
+                          View Case Study <FaArrowRight className="text-xs" />
                         </a>
                       </div>
                     </div>
@@ -393,7 +393,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Product Overview Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -402,7 +402,7 @@ const CaseStudies = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl font-bold text-slate-800 mb-4">Our Products at a Glance</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Products at a Glance</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
           </motion.div>
 
@@ -412,12 +412,12 @@ const CaseStudies = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 text-center border border-blue-200 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 text-center border border-blue-100 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaFlask className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-bold text-blue-800 mb-2">NeoLact MMF Plus</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">NeoLact MMF Plus</h3>
               <p className="text-blue-600 text-sm">Mother's Milk Factor (Enhanced)</p>
               <p className="text-gray-600 text-xs mt-2">Higher protein formula for babies with increased nutritional needs</p>
             </motion.div>
@@ -427,13 +427,13 @@ const CaseStudies = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-6 text-center border border-green-200 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 text-center border border-blue-100 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaTint className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-bold text-green-800 mb-2">NeoLact MMF</h3>
-              <p className="text-green-600 text-sm">Mother's Milk Factor</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">NeoLact MMF</h3>
+              <p className="text-blue-600 text-sm">Mother's Milk Factor</p>
               <p className="text-gray-600 text-xs mt-2">100% human milk-derived fortifier for optimal growth</p>
             </motion.div>
 
@@ -442,13 +442,13 @@ const CaseStudies = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-6 text-center border border-purple-200 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-white to-blue-50 rounded-2xl p-6 text-center border border-blue-100 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-md">
                 <FaBaby className="text-white text-2xl" />
               </div>
-              <h3 className="text-xl font-bold text-purple-800 mb-2">NeoLact 70</h3>
-              <p className="text-purple-600 text-sm">Lyophilized Human Milk</p>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">NeoLact 70</h3>
+              <p className="text-blue-600 text-sm">Lyophilized Human Milk</p>
               <p className="text-gray-600 text-xs mt-2">Shelf-stable human milk powder for immuno-nutritional support</p>
             </motion.div>
           </div>
@@ -464,18 +464,19 @@ const CaseStudies = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              Share Your Success Story
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Share Your <span className="text-blue-600">Success Story</span>
             </h2>
-            <p className="text-gray-500 mb-8 leading-relaxed">
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 mb-8 leading-relaxed">
               Are you a neonatologist or healthcare professional with experience using NeoLacta products? 
               Submit your case study to help other clinicians make informed decisions.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:shadow-blue-200/50 hover:-translate-y-1 transition-all duration-300">
                 Submit Case Study
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1">
                 Download All Case Studies
               </button>
             </div>
