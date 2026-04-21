@@ -44,7 +44,7 @@ const HCPTestimonials = () => {
       experience: "15+ years",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       thumbnail: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
-      testimonial: " human milk-derived products have been a game-changer in my NICU practice. The MMF Plus has shown remarkable results in ELBW babies, with excellent weight gain and feed tolerance. I highly recommend these products to all neonatologists.",
+      testimonial: "Human milk-derived products have been a game-changer in my NICU practice. The MMF Plus has shown remarkable results in ELBW babies, with excellent weight gain and feed tolerance. I highly recommend these products to all neonatologists.",
       duration: "4:30",
       rating: 5,
       category: "neonatologist"
@@ -58,7 +58,7 @@ const HCPTestimonials = () => {
       experience: "12+ years",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       thumbnail: "https://images.pexels.com/photos/6696132/pexels-photo-6696132.jpeg?auto=compress&cs=tinysrgb&w=800&h=450&fit=crop",
-      testimonial: "The clinical outcomes with  100% human milk fortifiers have been outstanding. We've seen reduced NEC rates and better growth parameters in our preterm infants. The product quality is exceptional.",
+      testimonial: "The clinical outcomes with 100% human milk fortifiers have been outstanding. We've seen reduced NEC rates and better growth parameters in our preterm infants. The product quality is exceptional.",
       duration: "5:15",
       rating: 5,
       category: "neonatologist"
@@ -87,7 +87,7 @@ const HCPTestimonials = () => {
       location: "Hyderabad",
       specialty: "Neonatology",
       experience: "18+ years",
-      testimonial: " human milk-derived products have transformed our NICU's feeding protocol. The MMF case series we published demonstrated optimal growth in ELBW babies. I strongly recommend these products for all premature infants.",
+      testimonial: "Human milk-derived products have transformed our NICU's feeding protocol. The MMF case series we published demonstrated optimal growth in ELBW babies. I strongly recommend these products for all premature infants.",
       rating: 5,
       date: "March 2024",
       image: "https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
@@ -139,7 +139,7 @@ const HCPTestimonials = () => {
       location: "Bangalore",
       specialty: "Pediatric Nutrition",
       experience: "12+ years",
-      testimonial: " products have excellent nutritional profiles. The growth charts of babies on their fortifiers show consistent improvement. I confidently recommend them to all my colleagues.",
+      testimonial: "Products have excellent nutritional profiles. The growth charts of babies on their fortifiers show consistent improvement. I confidently recommend them to all my colleagues.",
       rating: 5,
       date: "November 2023",
       image: "https://images.pexels.com/photos/6696132/pexels-photo-6696132.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
@@ -152,7 +152,7 @@ const HCPTestimonials = () => {
       location: "Delhi NCR",
       specialty: "Neonatal Intensive Care",
       experience: "22+ years",
-      testimonial: "The clinical evidence supporting  products is robust. We've incorporated their human milk fortifiers into our standard protocol with excellent results. Highly recommended.",
+      testimonial: "The clinical evidence supporting products is robust. We've incorporated their human milk fortifiers into our standard protocol with excellent results. Highly recommended.",
       rating: 5,
       date: "October 2023",
       image: "https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop",
@@ -162,9 +162,9 @@ const HCPTestimonials = () => {
 
   const stats = [
     { value: "50+", label: "HCP Testimonials", icon: <FaUserMd />, color: "from-blue-600 to-blue-500" },
-    { value: "25+", label: "Expert Neonatologists", icon: <FaStethoscope />, color: "from-pink-500 to-pink-400" },
-    { value: "15+", label: "Published Case Studies", icon: <FaClipboardList />, color: "from-green-600 to-green-500" },
-    { value: "100%", label: "Recommendation Rate", icon: <FaAward />, color: "from-purple-600 to-purple-500" }
+    { value: "25+", label: "Expert Neonatologists", icon: <FaStethoscope />, color: "from-blue-500 to-blue-400" },
+    { value: "15+", label: "Published Case Studies", icon: <FaClipboardList />, color: "from-blue-600 to-blue-500" },
+    { value: "100%", label: "Recommendation Rate", icon: <FaAward />, color: "from-blue-500 to-blue-400" }
   ];
 
   const nextTestimonial = () => {
@@ -176,10 +176,10 @@ const HCPTestimonials = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-blue-50/10 to-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-800 text-white py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.pexels.com/photos/4386468/pexels-photo-4386468.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop"
@@ -187,7 +187,7 @@ const HCPTestimonials = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-800/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
         <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
@@ -196,22 +196,22 @@ const HCPTestimonials = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-blue-300 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
+            <span className="text-blue-200 font-semibold text-sm uppercase tracking-wider bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full inline-block mb-4 border border-white/20">
               Healthcare Professionals Speak
             </span>
             <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-4">
-              HCP <span className="text-blue-300">Testimonials</span>
+              HCP <span className="text-blue-200">Testimonials</span>
             </h1>
             <h2 className="text-xl md:text-2xl font-semibold mb-6 text-blue-200">
               Trusted by Leading Neonatologists Across India
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto">
-              Hear what healthcare professionals say about  100% human milk products and 
+              Hear what healthcare professionals say about 100% human milk products and 
               their impact on neonatal care outcomes.
             </p>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-50 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
       {/* Statistics Section */}
@@ -230,7 +230,7 @@ const HCPTestimonials = () => {
                 <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 shadow-md`}>
                   <div className="text-white text-2xl">{stat.icon}</div>
                 </div>
-                <div className="text-3xl font-bold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
+                <div className="text-3xl font-bold text-gray-800 mb-1 group-hover:text-blue-600 transition-colors">{stat.value}</div>
                 <p className="text-gray-500 text-sm">{stat.label}</p>
               </motion.div>
             ))}
@@ -239,7 +239,7 @@ const HCPTestimonials = () => {
       </section>
 
       {/* Video Testimonials Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -248,14 +248,14 @@ const HCPTestimonials = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaVideo className="text-red-600 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Video Testimonials</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Video Testimonials</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Experts <span className="text-blue-600">Share Their Experience</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
             <p className="text-gray-500 max-w-2xl mx-auto mt-4">
               Leading neonatologists and healthcare professionals share their clinical experience with NeoLacta products
             </p>
@@ -269,7 +269,7 @@ const HCPTestimonials = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="relative cursor-pointer" onClick={() => setActiveVideo(activeVideo === video.id ? null : video.id)}>
                   <img 
@@ -314,7 +314,7 @@ const HCPTestimonials = () => {
                       <FaUserMd className="text-white text-xl" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-800">{video.name}</h3>
+                      <h3 className="font-bold text-gray-800">{video.name}</h3>
                       <p className="text-xs text-blue-600">{video.designation}</p>
                       <p className="text-xs text-gray-500 flex items-center gap-1">
                         <FaMapMarkerAlt className="text-blue-400" /> {video.location}
@@ -343,7 +343,7 @@ const HCPTestimonials = () => {
                   
                   <button 
                     onClick={() => setActiveVideo(activeVideo === video.id ? null : video.id)}
-                    className="mt-4 text-blue-600 text-sm font-semibold hover:underline flex items-center gap-1"
+                    className="mt-4 text-blue-600 text-sm font-semibold hover:gap-2 transition-all flex items-center gap-1 hover:text-blue-700"
                   >
                     {activeVideo === video.id ? "Close Video" : "Watch Full Testimonial"} <FaChevronRight className="text-xs" />
                   </button>
@@ -364,14 +364,14 @@ const HCPTestimonials = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaHeart className="text-blue-600 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Written Testimonials</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Written Testimonials</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               What <span className="text-blue-600">Neonatologists Say</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -382,7 +382,7 @@ const HCPTestimonials = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
+                className="group bg-gradient-to-br from-white to-blue-50/30 rounded-2xl p-6 shadow-md hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 border border-gray-100 hover:-translate-y-2"
               >
                 <FaQuoteLeft className="text-blue-300 text-2xl mb-3 opacity-50" />
                 
@@ -399,7 +399,7 @@ const HCPTestimonials = () => {
                     )}
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">
                       {testimonial.name}
                     </h3>
                     <p className="text-xs text-blue-600">{testimonial.designation}</p>
@@ -422,7 +422,7 @@ const HCPTestimonials = () => {
                 
                 {testimonial.keyFinding && (
                   <div className="mt-3 pt-2 border-t border-gray-50">
-                    <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                    <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full group-hover:bg-blue-100 transition-colors">
                       Key Finding: {testimonial.keyFinding}
                     </span>
                   </div>
@@ -434,7 +434,7 @@ const HCPTestimonials = () => {
       </section>
 
       {/* Featured Testimonial Carousel */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-5xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -443,14 +443,14 @@ const HCPTestimonials = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaAward className="text-yellow-500 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Featured Expert</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Featured Expert</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Spotlight: <span className="text-blue-600">Expert Opinion</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="relative">
@@ -461,7 +461,7 @@ const HCPTestimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
-                className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100"
+                className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-blue-100"
               >
                 <div className="grid md:grid-cols-2">
                   <div className="bg-gradient-to-br from-blue-600 to-blue-500 text-white p-8 flex flex-col justify-center">
@@ -481,7 +481,7 @@ const HCPTestimonials = () => {
                         )}
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-slate-800">{writtenTestimonials[currentIndex].name}</h3>
+                        <h3 className="text-xl font-bold text-gray-800">{writtenTestimonials[currentIndex].name}</h3>
                         <p className="text-sm text-blue-600">{writtenTestimonials[currentIndex].designation}</p>
                         <p className="text-sm text-gray-500 flex items-center gap-1">
                           <FaMapMarkerAlt className="text-blue-400" /> {writtenTestimonials[currentIndex].location}
@@ -506,7 +506,7 @@ const HCPTestimonials = () => {
                     </p>
                     {writtenTestimonials[currentIndex].keyFinding && (
                       <div className="mt-3 pt-2">
-                        <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full">
+                        <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
                           Key Finding: {writtenTestimonials[currentIndex].keyFinding}
                         </span>
                       </div>
@@ -519,13 +519,13 @@ const HCPTestimonials = () => {
             {/* Navigation Arrows */}
             <button 
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-blue-50"
             >
               <FaChevronLeft className="text-blue-500" />
             </button>
             <button 
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 hover:bg-blue-50"
             >
               <FaChevronRight className="text-blue-500" />
             </button>
@@ -556,14 +556,14 @@ const HCPTestimonials = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-3 bg-white px-6 py-2 rounded-full mb-4 shadow-sm border border-gray-200">
+            <div className="inline-flex items-center gap-3 bg-blue-50 px-6 py-2 rounded-full mb-4 shadow-sm border border-blue-100">
               <FaMicroscope className="text-blue-600 text-lg" />
-              <span className="text-slate-700 font-semibold text-sm uppercase tracking-wider">Clinical Evidence</span>
+              <span className="text-blue-700 font-semibold text-sm uppercase tracking-wider">Clinical Evidence</span>
             </div>
-            <h2 className="text-4xl font-bold text-slate-800 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Why <span className="text-blue-600">Experts Trust NeoLacta</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-slate-400 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -577,7 +577,7 @@ const HCPTestimonials = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
                 <FaFlask className="text-white text-3xl" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">100% Human Milk</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">100% Human Milk</h3>
               <p className="text-gray-500 text-sm">Clinically proven human milk-derived products with superior outcomes</p>
             </motion.div>
 
@@ -588,10 +588,10 @@ const HCPTestimonials = () => {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-400 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
                 <FaChartLine className="text-white text-3xl" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Proven Results</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Proven Results</h3>
               <p className="text-gray-500 text-sm">Published case studies showing optimal growth and reduced complications</p>
             </motion.div>
 
@@ -602,10 +602,10 @@ const HCPTestimonials = () => {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-600 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform shadow-md">
                 <FaHospitalUser className="text-white text-3xl" />
               </div>
-              <h3 className="text-xl font-bold text-slate-800 mb-2">Trusted Nationwide</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Trusted Nationwide</h3>
               <p className="text-gray-500 text-sm">Used in 450+ hospitals across India with excellent feedback</p>
             </motion.div>
           </div>
@@ -613,7 +613,7 @@ const HCPTestimonials = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-20 bg-gradient-to-b from-blue-50/20 to-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -622,18 +622,19 @@ const HCPTestimonials = () => {
             viewport={{ once: true }}
           >
             <FaHeart className="text-5xl text-blue-500 mx-auto mb-4 animate-pulse" />
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              Join Our Community of Experts
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Join Our Community of <span className="text-blue-600">Experts</span>
             </h2>
-            <p className="text-gray-500 mb-8 leading-relaxed">
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto mb-6 rounded-full"></div>
+            <p className="text-gray-600 mb-8 leading-relaxed">
               Share your clinical experience with NeoLacta products and help other healthcare professionals 
               make informed decisions for their patients.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <button className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:shadow-xl hover:shadow-blue-200/50 hover:-translate-y-1 transition-all duration-300">
                 Share Your Testimonial
               </button>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <button className="border-2 border-blue-600 text-blue-600 bg-white px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-blue-200/50 hover:-translate-y-1">
                 Request Product Information
               </button>
             </div>
