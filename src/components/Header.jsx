@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdKeyboardArrowDown, MdMenu, MdClose } from 'react-icons/md';
+import logo from '../assets/logo-removebg.png';
+
 
 const menuItems = [
   { title: "Home", path: "/" },
@@ -17,9 +19,11 @@ const menuItems = [
     title: "Products",
     megaMenu: true,
     categories: [
-      { title: "Pasteurised Human Breast Milk", subItems: [
-        {title: "Neolact PHBM 70", path: "/products/phbm70"}
-      ] },
+      {
+        title: "Pasteurised Human Breast Milk", subItems: [
+          { title: "Neolact PHBM 70", path: "/products/phbm70" }
+        ]
+      },
       {
         title: "Lyophilised Human Milk Powder",
         subItems: [
@@ -69,15 +73,14 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white border-b border-blue-100 shadow-lg">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          
+
           {/* Logo - Blue Theme */}
           <NavLink to="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-blue-500 rounded-2xl flex items-center justify-center shadow-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-blue-200">
-              <span className="text-white text-3xl font-bold">N</span>
-            </div>
-            <div>
-              <p className="text-[10px] text-blue-600 -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
-            </div>
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-10 w-auto object-contain"
+            />
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -109,12 +112,10 @@ const Header = () => {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `py-2 transition-all duration-300 font-medium relative ${
-                        isActive 
-                          ? 'text-blue-600 font-semibold' 
-                          : 'text-gray-700 hover:text-blue-600 hover:scale-105'
-                      } after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-600 after:to-blue-400 after:transition-all after:duration-300 hover:after:w-full ${
-                        isActive ? 'after:w-full' : ''
+                      `py-2 transition-all duration-300 font-medium relative ${isActive
+                        ? 'text-blue-600 font-semibold'
+                        : 'text-gray-700 hover:text-blue-600 hover:scale-105'
+                      } after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-blue-600 after:to-blue-400 after:transition-all after:duration-300 hover:after:w-full ${isActive ? 'after:w-full' : ''
                       }`
                     }
                   >
@@ -131,10 +132,9 @@ const Header = () => {
                           key={i}
                           to={sub.path}
                           className={({ isActive }) =>
-                            `block px-5 py-2.5 rounded-xl mx-1 transition-all duration-300 text-sm ${
-                              isActive
-                                ? 'bg-blue-50 text-blue-600 font-medium'
-                                : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2 hover:scale-105'
+                            `block px-5 py-2.5 rounded-xl mx-1 transition-all duration-300 text-sm ${isActive
+                              ? 'bg-blue-50 text-blue-600 font-medium'
+                              : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2 hover:scale-105'
                             }`
                           }
                         >
@@ -149,15 +149,15 @@ const Header = () => {
                 {item.megaMenu && openDropdown === "Products" && (
                   <div className="absolute top-full left-0 pt-4 w-[820px] z-50 animate-fadeIn">
                     <div className="bg-white rounded-2xl shadow-xl shadow-blue-100/50 border border-blue-100 overflow-hidden flex">
-                      
+
                       {/* Left Panel - Categories */}
                       <div className="w-5/12 bg-gradient-to-b from-blue-50 to-white py-6">
                         {item.categories.map((cat, i) => (
                           <div
                             key={i}
                             className={`px-6 py-3.5 flex items-center justify-between cursor-pointer transition-all duration-300 mx-2 rounded-xl
-                              ${activeCategory?.title === cat.title 
-                                ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-md shadow-blue-200 translate-x-1 scale-105' 
+                              ${activeCategory?.title === cat.title
+                                ? 'bg-gradient-to-r from-blue-600 to-blue-500 text-white shadow-md shadow-blue-200 translate-x-1 scale-105'
                                 : 'text-gray-700 hover:bg-blue-100 hover:text-blue-600 hover:translate-x-2 hover:scale-105'
                               }`}
                             onMouseEnter={() => setActiveCategory(cat)}
@@ -180,8 +180,7 @@ const Header = () => {
                               key={idx}
                               to={sub.path}
                               className={({ isActive }) =>
-                                `block px-5 py-3.5 bg-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-500 hover:text-white rounded-xl mb-3 text-gray-700 hover:shadow-lg hover:shadow-blue-200 transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 ${
-                                  isActive ? 'ring-2 ring-blue-600 bg-blue-50 text-blue-600' : ''
+                                `block px-5 py-3.5 bg-white hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-500 hover:text-white rounded-xl mb-3 text-gray-700 hover:shadow-lg hover:shadow-blue-200 transition-all duration-300 text-sm font-medium hover:translate-x-2 hover:scale-105 ${isActive ? 'ring-2 ring-blue-600 bg-blue-50 text-blue-600' : ''
                                 }`
                               }
                             >
@@ -207,10 +206,10 @@ const Header = () => {
             to="/enquire"
             className={({ isActive }) =>
               `hidden md:block px-7 py-3 rounded-xl font-semibold text-sm shadow-md transition-all duration-300 hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-1 hover:scale-105 
-               ${isActive 
-                 ? 'bg-gradient-to-r from-blue-700 to-blue-600' 
-                 : 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600'
-               } text-white`
+               ${isActive
+                ? 'bg-gradient-to-r from-blue-700 to-blue-600'
+                : 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600'
+              } text-white`
             }
           >
             Enquire Now !
@@ -234,7 +233,7 @@ const Header = () => {
               <div key={idx} className="border-b border-blue-50 last:border-0 pb-2">
                 {item.submenu || item.megaMenu ? (
                   <>
-                    <button 
+                    <button
                       className="flex items-center justify-between w-full py-3 text-gray-800 font-medium hover:text-blue-600 transition-all duration-300 hover:translate-x-2"
                       onClick={() => setOpenDropdown(openDropdown === item.title ? null : item.title)}
                     >
@@ -248,10 +247,9 @@ const Header = () => {
                             key={subIdx}
                             to={sub.path}
                             className={({ isActive }) =>
-                              `block py-2.5 px-3 rounded-lg text-sm transition-all duration-300 ${
-                                isActive 
-                                  ? 'bg-blue-50 text-blue-600 font-medium' 
-                                  : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2'
+                              `block py-2.5 px-3 rounded-lg text-sm transition-all duration-300 ${isActive
+                                ? 'bg-blue-50 text-blue-600 font-medium'
+                                : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2'
                               }`
                             }
                             onClick={() => setIsMobileOpen(false)}
@@ -267,10 +265,9 @@ const Header = () => {
                                 key={subIdx}
                                 to={sub.path}
                                 className={({ isActive }) =>
-                                  `block py-2 pl-4 rounded-lg text-sm transition-all duration-300 ${
-                                    isActive 
-                                      ? 'bg-blue-50 text-blue-600' 
-                                      : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2'
+                                  `block py-2 pl-4 rounded-lg text-sm transition-all duration-300 ${isActive
+                                    ? 'bg-blue-50 text-blue-600'
+                                    : 'text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:translate-x-2'
                                   }`
                                 }
                                 onClick={() => setIsMobileOpen(false)}
@@ -287,10 +284,9 @@ const Header = () => {
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      `block py-3 font-medium transition-all duration-300 ${
-                        isActive 
-                          ? 'text-blue-600 border-l-4 border-blue-600 pl-3' 
-                          : 'text-gray-800 hover:text-blue-600 hover:translate-x-2'
+                      `block py-3 font-medium transition-all duration-300 ${isActive
+                        ? 'text-blue-600 border-l-4 border-blue-600 pl-3'
+                        : 'text-gray-800 hover:text-blue-600 hover:translate-x-2'
                       }`
                     }
                     onClick={() => setIsMobileOpen(false)}
@@ -300,7 +296,7 @@ const Header = () => {
                 )}
               </div>
             ))}
-            
+
             {/* Mobile Enquire Button */}
             <NavLink
               to="/enquire"
