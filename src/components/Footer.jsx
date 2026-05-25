@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo-removebg.png';
+
 import { 
   FaFacebookF, 
   FaTwitter, 
@@ -24,34 +26,18 @@ const Footer = () => {
     company: {
       title: "Company",
       links: [
-        { name: "About Us", path: "/about" },
-        { name: "Our Story", path: "/about/our-story" },
-        { name: "Mission & Vision", path: "/about/mission-vision" },
-        { name: "Quality & Safety", path: "/about/quality-safety" },
-        { name: "Awards & Recognition", path: "/about/awards" },
-        { name: "Careers", path: "/career" }
+        {name: "Home", path:"/"},
+        {name: "About Us", path:"/about-us"},
+        {name: "Learn", path:"/learn"},
+        {name: "Contact", path:"/contact"},
+        {name: "Coming Soon", path:"/comming-soon"},
       ]
     },
     products: {
       title: "Products",
       links: [
-        { name: "PHBM 70", path: "/products/phbm70" },
-        { name: "Neolact N70", path: "/products/n70" },
-        { name: "Neolact N70 Prime", path: "/products/n70-prime" },
-        { name: "Neolact MMF", path: "/products/mmf" },
-        { name: "Neolact MMF PLUS", path: "/products/mmf-plus" },
-        { name: "Neolact SOS", path: "/products/sos" }
-      ]
-    },
-    resources: {
-      title: "Resources",
-      links: [
-        { name: "For Parents", path: "/parents" },
-        { name: "For HCPs", path: "/hcps" },
-        { name: "Publications", path: "/hcps/publications" },
-        { name: "Case Studies", path: "/hcps/case-studies" },
-        { name: "Blogs", path: "/learn/blogs" },
-        { name: "Press Releases", path: "/learn/press" }
+        {name: "NeoPepti HMF", path: '/products/neopepti-hmf'},
+        {name: "NeoPro", path: "/products/neopro"},
       ]
     },
     support: {
@@ -60,71 +46,71 @@ const Footer = () => {
         { name: "Contact Us", path: "/contact" },
         { name: "Customer Support", path: "/support/customer" },
         { name: "Request Information", path: "/support/request" },
-        { name: "Become a Donor", path: "/donor/become-donor" },
-        { name: "FAQ for Parents", path: "/parents/faq" },
-        { name: "FAQ for Donors", path: "/donor/faq" }
+        { name: "Become a Partner", path: "/partner" },
+        { name: "FAQ", path: "/faq" }
       ]
     }
   };
 
   const socialLinks = [
-    { icon: <FaFacebookF />, href: "https://facebook.com/neolacta", label: "Facebook" },
-    { icon: <FaTwitter />, href: "https://twitter.com/neolacta", label: "Twitter" },
-    { icon: <FaLinkedinIn />, href: "https://linkedin.com/company/neolacta", label: "LinkedIn" },
-    { icon: <FaInstagram />, href: "https://instagram.com/neolacta", label: "Instagram" },
-    { icon: <FaYoutube />, href: "https://youtube.com/neolacta", label: "YouTube" }
+    { icon: <FaFacebookF />, href: "https://facebook.com/neoverse", label: "Facebook" },
+    { icon: <FaTwitter />, href: "https://twitter.com/neoverse", label: "Twitter" },
+    { icon: <FaLinkedinIn />, href: "https://linkedin.com/company/neoverse", label: "LinkedIn" },
+    { icon: <FaInstagram />, href: "https://instagram.com/neoverse", label: "Instagram" },
+    { icon: <FaYoutube />, href: "https://youtube.com/neoverse", label: "YouTube" }
   ];
 
   const quickStats = [
     { icon: <FaHeartbeat />, value: "50,000+", label: "Babies Benefited" },
     { icon: <FaHospitalUser />, value: "500+", label: "Hospitals Served" },
     { icon: <FaTrophy />, value: "ISO 22000", label: "Certified" },
-    { icon: <FaShieldAlt />, value: "100%", label: "Human Milk" }
+    { icon: <FaShieldAlt />, value: "100%", label: "Science-Backed" }
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-6 sm:pb-8">
         
         {/* Top Section with Logo and Social */}
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 pb-8 border-b border-blue-400/20">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-10 pb-6 sm:pb-8 border-b border-cyan-400/20">
           {/* Logo Section */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
-                <span className="text-white text-3xl font-bold">N</span>
-              </div>
-              <div>
-                <p className="text-[11px] text-blue-200 -mt-1 tracking-wide uppercase font-semibold">nurturing lives</p>
-              </div>
+              <NavLink to="/" className="flex">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="h-10 sm:h-12 w-auto object-contain brightness-110 contrast-125"
+                />
+              </NavLink>
             </div>
-            <p className="text-sm text-blue-100 max-w-xs leading-relaxed">
-              India's only ISO 22000:2018 and GMP-certified human milk facility dedicated to supporting optimal nutrition for premature babies.
+            <p className="text-sm text-cyan-100 max-w-xs leading-relaxed">
+              Global Science. Indian Hearts. Bridging the gap between global research and Indian NICUs.
             </p>
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {quickStats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="text-3xl text-blue-300 mb-2 flex justify-center group-hover:text-blue-200 transition-colors duration-300 group-hover:scale-110 transform">
+                <div className="text-2xl sm:text-3xl text-cyan-400 mb-2 flex justify-center group-hover:text-cyan-300 transition-all duration-300 group-hover:scale-110 transform">
                   {stat.icon}
                 </div>
-                <div className="text-xl font-bold text-white group-hover:text-blue-200 transition-colors">{stat.value}</div>
-                <div className="text-xs text-blue-200/70 group-hover:text-blue-100 transition-colors">{stat.label}</div>
+                <div className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">{stat.value}</div>
+                <div className="text-[10px] sm:text-xs text-cyan-200/70 group-hover:text-cyan-100 transition-colors">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Links Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10 sm:mb-12">
           {Object.values(footerLinks).map((section, idx) => (
             <div key={idx}>
-              <h3 className="text-lg font-semibold mb-4 text-blue-200 relative inline-block">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 text-cyan-300 relative inline-block">
                 {section.title}
-                <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full"></div>
+                <div className="absolute -bottom-2 left-0 w-10 sm:w-12 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full"></div>
               </h3>
               <ul className="space-y-2">
                 {section.links.map((link, linkIdx) => (
@@ -132,12 +118,12 @@ const Footer = () => {
                     <NavLink
                       to={link.path}
                       className={({ isActive }) =>
-                        `text-sm text-blue-100 hover:text-white transition-all duration-300 flex items-center gap-1 group ${
+                        `text-xs sm:text-sm text-cyan-100 hover:text-white transition-all duration-300 flex items-center gap-1 group ${
                           isActive ? 'text-white font-medium' : ''
                         }`
                       }
                     >
-                      <FaArrowRight className="text-[10px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 text-blue-300" />
+                      <FaArrowRight className="text-[8px] sm:text-[10px] opacity-0 group-hover:opacity-100 transition-all group-hover:translate-x-1 text-cyan-400" />
                       <span className="group-hover:translate-x-1 transition-transform">{link.name}</span>
                     </NavLink>
                   </li>
@@ -148,47 +134,47 @@ const Footer = () => {
         </div>
 
         {/* Contact & Newsletter Section */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 pt-4 border-t border-blue-400/20">
+        <div className="grid md:grid-cols-2 gap-8 mb-10 sm:mb-12 pt-4 sm:pt-6 border-t border-cyan-400/20">
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-blue-200">Get in Touch</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3 text-sm text-blue-100 group">
-                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
-                  <FaPhone className="text-blue-200" />
+            <h3 className="text-base sm:text-lg font-semibold mb-4 text-cyan-300">Get in Touch</h3>
+            <div className="space-y-3 sm:space-y-4">
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-cyan-100 group">
+                <div className="bg-cyan-700/30 p-1.5 sm:p-2 rounded-xl group-hover:bg-gradient-to-br group-hover:from-cyan-600 group-hover:to-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaPhone className="text-cyan-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Toll Free Helpline</p>
-                  <p className="hover:text-blue-200 transition-colors cursor-pointer">1800 - 419 - 2199</p>
+                  <p className="font-semibold text-white text-sm sm:text-base">Toll Free Helpline</p>
+                  <p className="hover:text-cyan-300 transition-colors cursor-pointer text-xs sm:text-sm">1800 - 419 - 2199</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-blue-100 group">
-                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
-                  <FaEnvelope className="text-blue-200" />
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-cyan-100 group">
+                <div className="bg-cyan-700/30 p-1.5 sm:p-2 rounded-xl group-hover:bg-gradient-to-br group-hover:from-cyan-600 group-hover:to-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaEnvelope className="text-cyan-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Email Us</p>
-                  <p className="hover:text-blue-200 transition-colors cursor-pointer">customersupport@neoverse.in</p>
+                  <p className="font-semibold text-white text-sm sm:text-base">Email Us</p>
+                  <p className="hover:text-cyan-300 transition-colors cursor-pointer text-xs sm:text-sm">customersupport@neoverse.in</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-blue-100 group">
-                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
-                  <FaMapMarkerAlt className="text-blue-200" />
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-cyan-100 group">
+                <div className="bg-cyan-700/30 p-1.5 sm:p-2 rounded-xl group-hover:bg-gradient-to-br group-hover:from-cyan-600 group-hover:to-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaMapMarkerAlt className="text-cyan-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Corporate Office</p>
-                  <p>NeoLacta Lifesciences Pvt. Ltd.</p>
-                  <p>Bangalore, Karnataka, India</p>
+                  <p className="font-semibold text-white text-sm sm:text-base">Corporate Office</p>
+                  <p className="text-xs sm:text-sm">Neoverse Lifesciences Pvt. Ltd.</p>
+                  <p className="text-xs sm:text-sm">Bangalore, Karnataka, India</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 text-sm text-blue-100 group">
-                <div className="bg-blue-700/50 p-2 rounded-xl group-hover:bg-blue-600 transition-all duration-300 group-hover:scale-110">
-                  <FaClock className="text-blue-200" />
+              <div className="flex items-start gap-3 text-xs sm:text-sm text-cyan-100 group">
+                <div className="bg-cyan-700/30 p-1.5 sm:p-2 rounded-xl group-hover:bg-gradient-to-br group-hover:from-cyan-600 group-hover:to-blue-600 transition-all duration-300 group-hover:scale-110">
+                  <FaClock className="text-cyan-300 text-sm sm:text-base" />
                 </div>
                 <div>
-                  <p className="font-semibold text-white">Support Hours</p>
-                  <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p className="font-semibold text-white text-sm sm:text-base">Support Hours</p>
+                  <p className="text-xs sm:text-sm">Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                  <p className="text-xs sm:text-sm">Sunday: Closed</p>
                 </div>
               </div>
             </div>
@@ -196,28 +182,28 @@ const Footer = () => {
 
           {/* Newsletter Signup */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-blue-200">Stay Updated</h3>
-            <p className="text-sm text-blue-100 mb-4">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 text-cyan-300">Stay Updated</h3>
+            <p className="text-xs sm:text-sm text-cyan-100 mb-4">
               Subscribe to our newsletter for latest updates, clinical insights, and parenting tips.
             </p>
             <form className="flex flex-col sm:flex-row gap-3 mb-4">
               <input
                 type="email"
                 placeholder="Your email address"
-                className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-blue-400/30 text-white placeholder-blue-200/50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all"
+                className="flex-1 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-white/10 border border-cyan-400/30 text-white placeholder-cyan-200/50 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all text-sm"
               />
-              <button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 hover:scale-105">
+              <button className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/30 hover:-translate-y-0.5">
                 Subscribe
               </button>
             </form>
-            <p className="text-xs text-blue-200/50">
+            <p className="text-[10px] sm:text-xs text-cyan-200/50">
               No spam, unsubscribe anytime. We respect your privacy.
             </p>
             
             {/* Social Links */}
             <div className="mt-6">
-              <p className="text-sm text-blue-100 mb-3">Follow Us</p>
-              <div className="flex gap-3">
+              <p className="text-xs sm:text-sm text-cyan-100 mb-3">Follow Us</p>
+              <div className="flex gap-2 sm:gap-3 flex-wrap">
                 {socialLinks.map((social, idx) => (
                   <a
                     key={idx}
@@ -225,7 +211,7 @@ const Footer = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="w-10 h-10 bg-white/10 hover:bg-blue-500 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/30 text-blue-200 hover:text-white"
+                    className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white/10 hover:bg-gradient-to-br hover:from-cyan-500 hover:to-blue-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/30 text-cyan-300 hover:text-white"
                   >
                     {social.icon}
                   </a>
@@ -236,28 +222,28 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-blue-400/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <div className="text-blue-200/60 text-center md:text-left hover:text-blue-100 transition-colors">
-              © {currentYear} NeoLacta Lifesciences. All rights reserved.
+        <div className="pt-6 sm:pt-8 border-t border-cyan-400/20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs sm:text-sm">
+            <div className="text-cyan-200/60 text-center md:text-left hover:text-cyan-100 transition-colors">
+              © {currentYear} Neoverse Lifesciences. All rights reserved.
             </div>
-            <div className="flex flex-wrap justify-center gap-6">
-              <NavLink to="/privacy-policy" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
+            <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+              <NavLink to="/privacy-policy" className="text-cyan-200/60 hover:text-cyan-100 transition-all duration-300 text-[10px] sm:text-xs hover:scale-105">
                 Privacy Policy
               </NavLink>
-              <NavLink to="/terms-of-use" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
+              <NavLink to="/terms-of-use" className="text-cyan-200/60 hover:text-cyan-100 transition-all duration-300 text-[10px] sm:text-xs hover:scale-105">
                 Terms of Use
               </NavLink>
-              <NavLink to="/cookie-policy" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
+              <NavLink to="/cookie-policy" className="text-cyan-200/60 hover:text-cyan-100 transition-all duration-300 text-[10px] sm:text-xs hover:scale-105">
                 Cookie Policy
               </NavLink>
-              <NavLink to="/sitemap" className="text-blue-200/60 hover:text-blue-100 transition-all duration-300 text-xs hover:scale-105">
+              <NavLink to="/sitemap" className="text-cyan-200/60 hover:text-cyan-100 transition-all duration-300 text-[10px] sm:text-xs hover:scale-105">
                 Sitemap
               </NavLink>
             </div>
           </div>
-          <div className="text-center mt-4 text-blue-200/40 text-xs">
-            <p className="hover:text-blue-200/60 transition-colors">💙 Dedicated to nurturing premature lives with 100% human milk</p>
+          <div className="text-center mt-4 text-cyan-200/40 text-[10px] sm:text-xs">
+            <p className="hover:text-cyan-200/60 transition-colors">✨ Bringing the world's best science to India's most precious lives.</p>
           </div>
         </div>
       </div>
