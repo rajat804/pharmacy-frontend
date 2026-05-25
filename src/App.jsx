@@ -30,6 +30,9 @@ import Conferences from './pages/hcps/Conferences';
 import HCPTestimonials from './pages/hcps/HCPTestimonials';
 import Contact from './pages/Contact';
 import Career from './pages/Carrer';
+import AboutUs from './pages/AboutUs';
+import Learn from './pages/Learn';
+import ComingSoon from './pages/CommingSoon';
 
 const App = () => {
   return (
@@ -39,6 +42,9 @@ const App = () => {
         <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/learn' element={<Learn />} />
+          <Route path='/comming-soon' element={<ComingSoon />} />
           <Route path='/about/our-story' element={<OurStory />} />
           <Route path='/about/mission-vision' element={<MissionVision />} />
           <Route path='/about/quality-safety' element={<QualitySafety />} />
